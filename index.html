@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wellness Herbal - Men's Ayurvedic Vitality & Strength | Quick Order</title>
+  <title>Wellness Herbal - Complete Men's Vitality Power Combo (Powder + Oil Spray)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&family=Noto+Sans+Devanagari:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -45,8 +45,8 @@
       <div class="doctor-contact-banner">
         <div class="doctor-line">
           <span class="doctor-icon">👨‍⚕️</span>
-          <strong data-en="Our Senior Ayurvedic Doctor will contact you" data-hi="हमारे वरिष्ठ आयुर्वेदिक डॉक्टर आपसे संपर्क करेंगे">
-            Our Senior Ayurvedic Doctor will contact you
+          <strong data-en="Senior Ayurvedic Doctor will guide routine on call" data-hi="वरिष्ठ आयुर्वेदिक डॉक्टर कॉल पर सही उपयोग समझाएंगे">
+            Senior Ayurvedic Doctor will guide routine on call
           </strong>
         </div>
         <div class="privacy-line">
@@ -73,86 +73,21 @@
         </span>
       </div>
 
-      <!-- Product Selection Tabs -->
-      <div class="product-selector-wrapper">
-        <div class="selector-heading">
-          <span class="sel-icon">⚡</span>
-          <span data-en="SELECT YOUR PRODUCT / COMBO" data-hi="अपना प्रोडक्ट या कॉम्बो चुनें">SELECT YOUR PRODUCT / COMBO</span>
-        </div>
-        
-        <div class="product-options-grid">
-          
-          <!-- Option 1: Testosterone Plus Powder -->
-          <div class="product-opt-card active" data-product-id="powder" onclick="selectProduct('powder')">
-            <div class="opt-badge best-seller" data-en="TOP SELLER" data-hi="सबसे लोकप्रिय">TOP SELLER</div>
-            <div class="opt-radio"><span class="radio-circle"></span></div>
-            <div class="opt-img-wrap">
-              <img src="images/testosterone_plus_powder.png" alt="Testosterone Plus Powder">
-            </div>
-            <div class="opt-info">
-              <strong class="opt-name" data-en="Testosterone Plus Powder" data-hi="टेस्टोस्टेरोन प्लस पाउडर">Testosterone Plus Powder</strong>
-              <span class="opt-weight">200 GRAM • Daily Energy & Strength</span>
-              <div class="opt-pricing">
-                <span class="opt-curr-price">₹1,499</span>
-                <del class="opt-mrp">₹2,499</del>
-                <span class="opt-save-badge">40% OFF</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Option 2: Steel Man Gold Oil Spray -->
-          <div class="product-opt-card" data-product-id="spray" onclick="selectProduct('spray')">
-            <div class="opt-badge" data-en="INSTANT ACTION" data-hi="तुरंत असर">INSTANT ACTION</div>
-            <div class="opt-radio"><span class="radio-circle"></span></div>
-            <div class="opt-img-wrap">
-              <img src="images/steelman_gold_spray.png" alt="Steel Man Gold Oil Spray">
-            </div>
-            <div class="opt-info">
-              <strong class="opt-name" data-en="Steel Man Gold Oil Spray" data-hi="स्टील मैन गोल्ड ऑयल स्प्रे">Steel Man Gold Oil Spray</strong>
-              <span class="opt-weight">50 ML • Power, Vitality & Stamina</span>
-              <div class="opt-pricing">
-                <span class="opt-curr-price">₹999</span>
-                <del class="opt-mrp">₹1,699</del>
-                <span class="opt-save-badge">41% OFF</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Option 3: Mega Power Combo -->
-          <div class="product-opt-card combo-card" data-product-id="combo" onclick="selectProduct('combo')">
-            <div class="opt-badge mega-save" data-en="BEST VALUE COMBO" data-hi="महा बचत कॉम्बो">BEST VALUE COMBO</div>
-            <div class="opt-radio"><span class="radio-circle"></span></div>
-            <div class="opt-img-wrap combo-dual-img">
-              <img src="images/testosterone_plus_powder.png" class="combo-img-1" alt="Powder">
-              <img src="images/steelman_gold_spray.png" class="combo-img-2" alt="Spray">
-            </div>
-            <div class="opt-info">
-              <strong class="opt-name" data-en="Full Power Combo (Powder + Spray)" data-hi="फुल पावर कॉम्बो (पाउडर + स्प्रे)">Full Power Combo (Powder + Spray)</strong>
-              <span class="opt-weight">Powder 200g + Oil Spray 50ml (Complete Care)</span>
-              <div class="opt-pricing">
-                <span class="opt-curr-price">₹2,199</span>
-                <del class="opt-mrp">₹4,198</del>
-                <span class="opt-save-badge gold-save">SAVE ₹1,999 (48% OFF)</span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Compact Active Product Showcase & Zooming Price Box -->
+      <!-- Combo Product Showcase Bar -->
       <div class="product-price-compact-bar">
-        <div class="product-mini-thumb">
-          <img id="activeProductImg" src="images/testosterone_plus_powder.png" alt="Testosterone Plus Powder" class="thumb-img">
-          <span class="active-tag-pill" id="activeProductTag">🦁 LION FORMULA</span>
+        <div class="product-mini-thumb combo-hero-thumb">
+          <img id="activeProductImg" src="images/power_combo_kit.png" alt="Full Power Combo - Testosterone Plus Powder and Steel Man Gold Spray" class="thumb-img-combo">
+          <span class="active-tag-pill">👑 COMPLETE 2-IN-1 KIT</span>
         </div>
 
         <div class="product-mini-info">
           <div class="product-title-row">
-            <h1 class="product-name" id="activeProductName" data-en="Testosterone Plus Powder (200g)" data-hi="टेस्टोस्टेरोन प्लस पाउडर (200g)">
-              Testosterone Plus Powder (200g)
-            </h1>
-            <span class="delivery-all-india">🇮🇳 <span data-en="Free Fast Delivery" data-hi="फ्री फ़ास्ट डिलीवरी">Free Fast Delivery</span></span>
+            <div>
+              <span class="combo-headline-badge" data-en="POWER COMBO PACK" data-hi="फुल पावर कॉम्बो पैक">POWER COMBO PACK</span>
+              <h1 class="product-name" data-en="Testosterone Plus Powder (200g) + Steel Man Gold Spray (50ml)" data-hi="टेस्टोस्टेरोन प्लस पाउडर (200g) + स्टील मैन गोल्ड स्प्रे (50ml)">
+                Testosterone Plus Powder (200g) + Steel Man Gold Spray (50ml)
+              </h1>
+            </div>
           </div>
 
           <div class="product-usp-badges">
@@ -164,16 +99,50 @@
           <!-- Pulsing Zoom-in Zoom-out Price Highlight -->
           <div class="price-action-row">
             <div class="price-wrapper">
-              <del class="mrp-old" id="activeMrp">₹2,499</del>
+              <del class="mrp-old">₹4,198</del>
               <div class="price-pulse-target">
                 <span class="curr-sign">₹</span>
-                <span class="price-val" id="activePriceVal">1,499</span>
+                <span class="price-val">2,199</span>
               </div>
             </div>
             <div class="save-tag-badge">
-              <span id="activeSaveTag" data-en="SAVE ₹1,000 (40% OFF)" data-hi="₹1,000 छूट (40% OFF)">SAVE ₹1,000 (40% OFF)</span>
+              <span data-en="SAVE ₹1,999 (48% OFF)" data-hi="₹1,999 भारी छूट (48% OFF)">SAVE ₹1,999 (48% OFF)</span>
             </div>
           </div>
+        </div>
+      </div>
+
+      <!-- Combo Usage Guide (Highlighting Separate Usage) -->
+      <div class="combo-usage-box">
+        <div class="usage-title-strip">
+          <span class="usage-dot">💡</span>
+          <strong data-en="HOW TO USE BOTH PRODUCTS (SEPARATELY)" data-hi="दोनों का अलग-अलग इस्तेमाल कैसे करें">HOW TO USE BOTH PRODUCTS (SEPARATELY)</strong>
+        </div>
+        <div class="usage-steps-grid">
+          
+          <div class="usage-step-card">
+            <div class="step-num-pill">1</div>
+            <div class="step-content">
+              <strong class="step-prod-title">Testosterone Plus Powder (200g)</strong>
+              <p class="step-desc" data-en="Drink daily with warm milk — for internal energy, strength & natural hormone support." data-hi="रोजाना हल्के गर्म दूध के साथ पिएं — अंदरूनी ताकत, स्टैमिना और कमजोरी दूर करने के लिए।">
+                Drink daily with warm milk — for internal energy, strength & natural hormone support.
+              </p>
+            </div>
+          </div>
+
+          <div class="usage-step-card">
+            <div class="step-num-pill">2</div>
+            <div class="step-content">
+              <strong class="step-prod-title">Steel Man Gold Oil Spray (50ml)</strong>
+              <p class="step-desc" data-en="Use for external massage — fast absorption for instant vigor, vitality & performance." data-hi="बाहरी मालिश के लिए स्प्रे करें — तुरंत सोखकर शक्ति, कसावट और स्फूर्ति बढ़ाने के लिए।">
+                Use for external massage — fast absorption for instant vigor, vitality & performance.
+              </p>
+            </div>
+          </div>
+
+        </div>
+        <div class="usage-note">
+          ⚠️ <span data-en="Note: Both products are used separately for complete 360° care. Doctor will explain exact routine on call." data-hi="ध्यान दें: दोनों का प्रयोग अलग-अलग होता है (एक पीने के लिए, दूसरा मालिश के लिए)। डॉक्टर कॉल पर पूरा तरीका बताएंगे।">Note: Both products are used separately for complete 360° care. Doctor will explain exact routine on call.</span>
         </div>
       </div>
 
@@ -262,8 +231,8 @@
         <div class="cod-status-strip">
           <div class="cod-left">
             <span class="cod-bullet">✓</span>
-            <strong data-en="Cash On Delivery (COD) - Pay when parcel arrives" data-hi="कैश ऑन डिलीवरी (COD) - पार्सल मिलने पर पैसे दें">
-              Cash On Delivery (COD) - Pay when parcel arrives
+            <strong data-en="Cash On Delivery (COD) - Free Express Delivery" data-hi="कैश ऑन डिलीवरी (COD) - पूरे भारत में फ्री डिलीवरी">
+              Cash On Delivery (COD) - Free Express Delivery
             </strong>
           </div>
           <span class="all-india-tag" data-en="🔒 100% Secret Packaging" data-hi="🔒 100% गुप्त पैकिंग">🔒 100% Secret Packaging</span>
@@ -278,7 +247,7 @@
             </span>
             <span class="btn-sub-detail">
               <span data-en="Pay at Delivery: " data-hi="डिलीवरी पर देय: ">Pay at Delivery: </span>
-              <strong id="btnPayAmount">₹1,499</strong> | <span data-en="Zero Advance Payment Required" data-hi="पहले कोई पैसा नहीं देना">Zero Advance Payment Required</span>
+              <strong>₹2,199</strong> | <span data-en="Zero Advance Payment Required" data-hi="पहले कोई पैसा नहीं देना">Zero Advance Payment Required</span>
             </span>
           </div>
         </button>
@@ -327,7 +296,7 @@
           <span class="verified-photo-badge">✓ 100% Real Customer</span>
         </div>
         <div class="lifestyle-caption">
-          <strong>"3 hafte me hi energy aur stamina me behtareen asar dikha!"</strong>
+          <strong>"Dono ko routine me use kiya — 3 hafte me hi jabardast energy aur stamina mehsoos hua!"</strong>
           <span>— Rahul M., Verified Customer (New Delhi)</span>
         </div>
       </div>
@@ -348,50 +317,6 @@
       <div class="reviews-cards-list">
         
         <!-- Review 1 -->
-        <div class="single-review-card">
-          <div class="review-top">
-            <div class="reviewer-badge-info">
-              <span class="avatar-circle">VR</span>
-              <div>
-                <strong class="reviewer-name">Vikram Rathore</strong>
-                <span class="reviewer-city">Jaipur, Rajasthan</span>
-              </div>
-            </div>
-            <span class="verified-purchase-pill">✓ Verified Purchase</span>
-          </div>
-          <div class="stars-gold">★★★★★</div>
-          <p class="review-comment" data-en="I have been taking Testosterone Plus Powder with warm milk for 3 weeks now. The constant fatigue and low energy from office stress is completely gone. Stamina during workouts and throughout the day is on another level. Pure Ayurvedic, zero acidity or side effects!" data-hi="टेस्टोस्टेरोन प्लस पाउडर को हल्के गर्म दूध के साथ 3 हफ्ते से ले रहा हूँ। ऑफिस के तनाव से होने वाली दिनभर की थकान बिल्कुल खत्म हो गई है। स्टैमिना और स्फूर्ति में गज़ब का बदलाव आया है। 100% आयुर्वेदिक है, कोई एसिडिटी या साइड इफ़ेक्ट नहीं!">
-            I have been taking Testosterone Plus Powder with warm milk for 3 weeks now. The constant fatigue and low energy from office stress is completely gone. Stamina during workouts and throughout the day is on another level. Pure Ayurvedic, zero acidity or side effects!
-          </p>
-          <div class="review-footer-info">
-            <span class="review-product-tag">Purchased: Testosterone Plus Powder</span>
-            <span class="review-date">Reviewed 3 days ago</span>
-          </div>
-        </div>
-
-        <!-- Review 2 -->
-        <div class="single-review-card">
-          <div class="review-top">
-            <div class="reviewer-badge-info">
-              <span class="avatar-circle">RV</span>
-              <div>
-                <strong class="reviewer-name">Rajesh Verma</strong>
-                <span class="reviewer-city">Lucknow, UP</span>
-              </div>
-            </div>
-            <span class="verified-purchase-pill">✓ Verified Purchase</span>
-          </div>
-          <div class="stars-gold">★★★★★</div>
-          <p class="review-comment" data-en="The packaging was 100% discreet and confidential, with no product name on the outer box which I really appreciated. After ordering, the doctor called to explain the daily routine. Delivered in 3 days with Cash on Delivery. Very trustworthy brand." data-hi="पार्सल की पैकिंग पूरी तरह गुप्त और सीलबंद थी, डिब्बे के बाहर प्रोडक्ट का कोई नाम नहीं लिखा था जो मुझे सबसे अच्छा लगा। आर्डर के बाद डॉक्टर साहब का कॉल आया और उन्होंने इस्तेमाल का सही तरीका समझाया। 3 दिन में कैश ऑन डिलीवरी से पार्सल मिल गया!">
-            The packaging was 100% discreet and confidential, with no product name on the outer box which I really appreciated. After ordering, the doctor called to explain the daily routine. Delivered in 3 days with Cash on Delivery. Very trustworthy brand.
-          </p>
-          <div class="review-footer-info">
-            <span class="review-product-tag">Purchased: Steel Man Gold Oil Spray</span>
-            <span class="review-date">Reviewed 5 days ago</span>
-          </div>
-        </div>
-
-        <!-- Review 3 -->
         <div class="single-review-card highlight-review">
           <div class="review-top">
             <div class="reviewer-badge-info">
@@ -404,11 +329,55 @@
             <span class="verified-purchase-pill">✓ Verified Purchase</span>
           </div>
           <div class="stars-gold">★★★★★</div>
-          <p class="review-comment" data-en="I ordered the Mega Power Combo (Powder + Spray). Best decision! Within 10 to 12 days, I felt a solid surge in vigor, strength, and endurance. The spray absorbs fast without sticky mess and the powder mixes nicely. Worth every single rupee!" data-hi="मैंने फुल पावर कॉम्बो (पाउडर + ऑयल स्प्रे) मंगाया था। 10-12 दिनों में ही शरीर में शक्ति, स्टैमिना और स्फूर्ति में ज़बरदस्त फ़र्क महसूस हुआ। स्प्रे तुरंत सोख लेता है और पाउडर भी आसानी से घुल जाता है। पैसा वसूल कॉम्बो है!">
-            I ordered the Mega Power Combo (Powder + Spray). Best decision! Within 10 to 12 days, I felt a solid surge in vigor, strength, and endurance. The spray absorbs fast without sticky mess and the powder mixes nicely. Worth every single rupee!
+          <p class="review-comment" data-en="I ordered this Complete Power Combo (Powder + Spray). Best decision! Powder raat ko doodh ke sath pita hu aur spray ko routine me lagata hu. Within 10 to 12 days, I felt a solid surge in vigor, strength, and endurance. Worth every single rupee!" data-hi="मैंने यह पूरा पावर कॉम्बो (पाउडर + ऑयल स्प्रे) मंगाया था। सबसे बढ़िया फ़ैसला रहा! पाउडर को रात में दूध के साथ लेता हूँ और स्प्रे का अलग से प्रयोग करता हूँ। 10-12 दिनों में ही शरीर में शक्ति, स्टैमिना और स्फूर्ति में ज़बरदस्त फ़र्क महसूस हुआ। पैसा वसूल कॉम्बो है!">
+            I ordered this Complete Power Combo (Powder + Spray). Best decision! Powder raat ko doodh ke sath pita hu aur spray ko routine me lagata hu. Within 10 to 12 days, I felt a solid surge in vigor, strength, and endurance. Worth every single rupee!
           </p>
           <div class="review-footer-info">
-            <span class="review-product-tag">Purchased: Full Power Combo Pack</span>
+            <span class="review-product-tag">Purchased: Full Power Combo Kit</span>
+            <span class="review-date">Reviewed 3 days ago</span>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="single-review-card">
+          <div class="review-top">
+            <div class="reviewer-badge-info">
+              <span class="avatar-circle">VR</span>
+              <div>
+                <strong class="reviewer-name">Vikram Rathore</strong>
+                <span class="reviewer-city">Jaipur, Rajasthan</span>
+              </div>
+            </div>
+            <span class="verified-purchase-pill">✓ Verified Purchase</span>
+          </div>
+          <div class="stars-gold">★★★★★</div>
+          <p class="review-comment" data-en="Office fatigue and low stamina were troubling me. Doctor called me right after booking and explained how to use powder with milk and spray separately. In 3 weeks, morning to night energy has completely transformed. 100% Ayurvedic and safe." data-hi="ऑफिस की थकान और कमजोरी से परेशान था। आर्डर के बाद डॉक्टर साहब का कॉल आया और उन्होंने पाउडर व स्प्रे दोनों का अलग-अलग इस्तेमाल अच्छे से समझाया। 3 हफ्ते में सुबह से लेकर रात तक ऊर्जा बनी रहती है। 100% आयुर्वेदिक और सुरक्षित!">
+            Office fatigue and low stamina were troubling me. Doctor called me right after booking and explained how to use powder with milk and spray separately. In 3 weeks, morning to night energy has completely transformed. 100% Ayurvedic and safe.
+          </p>
+          <div class="review-footer-info">
+            <span class="review-product-tag">Purchased: Full Power Combo Kit</span>
+            <span class="review-date">Reviewed 5 days ago</span>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="single-review-card">
+          <div class="review-top">
+            <div class="reviewer-badge-info">
+              <span class="avatar-circle">RV</span>
+              <div>
+                <strong class="reviewer-name">Rajesh Verma</strong>
+                <span class="reviewer-city">Lucknow, UP</span>
+              </div>
+            </div>
+            <span class="verified-purchase-pill">✓ Verified Purchase</span>
+          </div>
+          <div class="stars-gold">★★★★★</div>
+          <p class="review-comment" data-en="The packaging was 100% discreet and confidential, with no product name on the outer box. Delivered in 3 days with Cash on Delivery. Both the powder and spray quality is top-notch." data-hi="पार्सल की पैकिंग पूरी तरह गुप्त और सीलबंद थी, डिब्बे के बाहर प्रोडक्ट का कोई नाम नहीं लिखा था। 3 दिन में कैश ऑन डिलीवरी से पार्सल मिल गया। पाउडर और ऑयल स्प्रे दोनों की क्वालिटी बेहद शानदार है।">
+            The packaging was 100% discreet and confidential, with no product name on the outer box. Delivered in 3 days with Cash on Delivery. Both the powder and spray quality is top-notch.
+          </p>
+          <div class="review-footer-info">
+            <span class="review-product-tag">Purchased: Full Power Combo Kit</span>
             <span class="review-date">Reviewed 1 week ago</span>
           </div>
         </div>
@@ -426,11 +395,11 @@
             <span class="verified-purchase-pill">✓ Verified Purchase</span>
           </div>
           <div class="stars-gold">★★★★★</div>
-          <p class="review-comment" data-en="Genuine Ayurvedic formulation. You can genuinely feel the benefit of authentic Shilajit and Ashwagandha. My energy stays high from morning till night. Fast delivery and polite customer support. Highly recommended for all men." data-hi="असली और शुद्ध आयुर्वेदिक उत्पाद है। शुद्ध शिलाजीत और अश्वगंधा का प्रभाव साफ महसूस होता है। सुबह से लेकर रात तक ऊर्जा बनी रहती है। समय पर डिलीवरी और बहुत बढ़िया कस्टमर सपोर्ट। सभी भाइयों को सलाह दूंगा!">
-            Genuine Ayurvedic formulation. You can genuinely feel the benefit of authentic Shilajit and Ashwagandha. My energy stays high from morning till night. Fast delivery and polite customer support. Highly recommended for all men.
+          <p class="review-comment" data-en="Genuine Ayurvedic formulation. You can genuinely feel the benefit of authentic Shilajit and Ashwagandha. Both products work hand-in-hand to restore vigor and endurance. Highly recommended for all men." data-hi="असली और शुद्ध आयुर्वेदिक उत्पाद है। शुद्ध शिलाजीत और अश्वगंधा का प्रभाव साफ महसूस होता है। दोनों उत्पाद मिलकर अंदरूनी और बाहरी ताकत को बहाल करते हैं। सभी भाइयों को सलाह दूंगा!">
+            Genuine Ayurvedic formulation. You can genuinely feel the benefit of authentic Shilajit and Ashwagandha. Both products work hand-in-hand to restore vigor and endurance. Highly recommended for all men.
           </p>
           <div class="review-footer-info">
-            <span class="review-product-tag">Purchased: Testosterone Plus Powder</span>
+            <span class="review-product-tag">Purchased: Full Power Combo Kit</span>
             <span class="review-date">Reviewed 2 weeks ago</span>
           </div>
         </div>
@@ -440,8 +409,8 @@
       <!-- Quick Scroll to Top Order Button -->
       <div class="bottom-order-trigger">
         <button class="scroll-up-order-btn" onclick="scrollToTopForm()">
-          <span id="bottomBtnText" data-en="↑ ORDER NOW (CASH ON DELIVERY - ₹1,499)" data-hi="↑ अभी आर्डर करें (कैश ऑन डिलीवरी - ₹1,499)">
-            ↑ ORDER NOW (CASH ON DELIVERY - ₹1,499)
+          <span data-en="↑ ORDER COMBO KIT (CASH ON DELIVERY - ₹2,199)" data-hi="↑ अभी कॉम्बो आर्डर करें (कैश ऑन डिलीवरी - ₹2,199)">
+            ↑ ORDER COMBO KIT (CASH ON DELIVERY - ₹2,199)
           </span>
         </button>
       </div>
@@ -464,11 +433,11 @@
         <span class="check-symbol">✓</span>
       </div>
       
-      <h3 class="modal-h3" data-en="Your Order is Registered! 🎉" data-hi="आपका आर्डर बुक हो गया है! 🎉">
-        Your Order is Registered! 🎉
+      <h3 class="modal-h3" data-en="Your Combo Order is Registered! 🎉" data-hi="आपका कॉम्बो आर्डर बुक हो गया है! 🎉">
+        Your Combo Order is Registered! 🎉
       </h3>
-      <p class="modal-desc" data-en="Thank you for choosing Wellness Herbal. Our senior doctor will contact you shortly to confirm your discreet delivery." data-hi="वेलनेस हर्बल चुनने के लिए धन्यवाद। हमारे वरिष्ठ डॉक्टर जल्द ही आपसे संपर्क करके पार्सल कन्फर्म करेंगे।">
-        Thank you for choosing Wellness Herbal. Our senior doctor will contact you shortly to confirm your discreet delivery.
+      <p class="modal-desc" data-en="Thank you for choosing Wellness Herbal. Our senior doctor will contact you shortly to confirm discreet dispatch & explain daily usage." data-hi="वेलनेस हर्बल चुनने के लिए धन्यवाद। हमारे वरिष्ठ डॉक्टर जल्द ही आपसे संपर्क करके पार्सल कन्फर्म करेंगे और सेवन विधि समझाएंगे।">
+        Thank you for choosing Wellness Herbal. Our senior doctor will contact you shortly to confirm discreet dispatch & explain daily usage.
       </p>
 
       <div class="modal-receipt">
@@ -478,7 +447,7 @@
         </div>
         <div class="rec-line">
           <span class="rec-label" data-en="Product:" data-hi="प्रोडक्ट:">Product:</span>
-          <strong id="receiptProduct" class="rec-prod-name">Testosterone Plus Powder (200g)</strong>
+          <strong class="rec-prod-name">Power Combo (Powder 200g + Oil Spray 50ml)</strong>
         </div>
         <div class="rec-line">
           <span class="rec-label" data-en="Customer:" data-hi="ग्राहक का नाम:">Customer:</span>
@@ -494,12 +463,12 @@
         </div>
         <div class="rec-line rec-total">
           <span data-en="Amount Payable at Delivery:" data-hi="डिलीवरी पर देय राशि:">Amount Payable at Delivery:</span>
-          <strong class="rec-amount" id="receiptAmount">₹1,499 (COD)</strong>
+          <strong class="rec-amount">₹2,199 (COD)</strong>
         </div>
       </div>
 
       <div class="team-contact-notice">
-        👨‍⚕️ <span data-en="Our specialist doctor will call you to guide dosage & routine." data-hi="हमारे डॉक्टर आपको खुराक व सही सेवन समझाने के लिए कॉल करेंगे।">Our specialist doctor will call you to guide dosage & routine.</span>
+        👨‍⚕️ <span data-en="Our specialist doctor will call you to guide dosage & separate usage." data-hi="हमारे डॉक्टर आपको दोनों का अलग-अलग सही उपयोग समझाने के लिए कॉल करेंगे।">Our specialist doctor will call you to guide dosage & separate usage.</span>
       </div>
 
       <div class="modal-btn-stack">
