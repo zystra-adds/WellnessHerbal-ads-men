@@ -7,7 +7,7 @@ let GOOGLE_SHEET_APP_URL = "https://script.google.com/macros/s/AKfycbxx6LYcRqZrN
 
 const COMBO_DETAILS = {
   name: "Power Combo (Testosterone Powder 200g + Oil Spray 50ml)",
-  amount: "₹2,199 (COD)"
+  amount: "₹3,499 (COD)"
 };
 
 document.addEventListener('DOMContentLoaded', () => {
