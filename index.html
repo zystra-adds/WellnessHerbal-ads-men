@@ -80,6 +80,123 @@
         </span>
       </div>
 
+      <!-- Moving Bouncing Pointer Arrow -->
+      <div class="compact-pointer-bar">
+        <span class="bouncing-arrow-dot">↓</span>
+        <span class="pointer-text" data-en="Fill 4 quick details to place Cash On Delivery order"
+          data-hi="कैश ऑन डिलीवरी आर्डर के लिए नीचे 4 आसान जानकारी भरें">
+          Fill 4 quick details to place Cash On Delivery order
+        </span>
+        <span class="bouncing-arrow-dot">↓</span>
+      </div>
+
+      <!-- Compact Single-Screen Form -->
+      <form id="compactOrderForm" class="compact-form" novalidate>
+
+        <!-- Field 1 & 2 in Grid -->
+        <div class="form-grid-row">
+
+          <!-- Name Field -->
+          <div class="input-cell" id="cell-name">
+            <label for="fullName">
+              <span class="label-en">Full Name</span>
+              <span class="label-hi">/ पूरा नाम</span>
+              <span class="req">*</span>
+            </label>
+            <div class="field-box">
+              <span class="input-icon">👤</span>
+              <input type="text" id="fullName" name="fullName" placeholder="Enter Full Name" required
+                autocomplete="name">
+              <span class="valid-mark">✓</span>
+            </div>
+            <small class="error-msg" data-en="Enter full name" data-hi="पूरा नाम दर्ज करें"></small>
+          </div>
+
+          <!-- Mobile Number Field -->
+          <div class="input-cell" id="cell-phone">
+            <label for="phoneNumber">
+              <span class="label-en">Mobile Number</span>
+              <span class="label-hi">/ मोबाइल नंबर</span>
+              <span class="req">*</span>
+            </label>
+            <div class="field-box phone-box">
+              <span class="ind-prefix">🇮🇳 +91</span>
+              <input type="tel" id="phoneNumber" name="phoneNumber" maxlength="10" placeholder="10-digit number"
+                required autocomplete="tel">
+              <span class="valid-mark">✓</span>
+            </div>
+            <small class="error-msg" data-en="Enter valid 10-digit number" data-hi="10 अंकों का नंबर डालें"></small>
+          </div>
+
+        </div>
+
+        <div class="form-grid-row">
+
+          <!-- Pincode Field -->
+          <div class="input-cell" id="cell-pincode">
+            <label for="pincode">
+              <span class="label-en">Pincode</span>
+              <span class="label-hi">/ पिन कोड</span>
+              <span class="req">*</span>
+            </label>
+            <div class="field-box">
+              <span class="input-icon">📍</span>
+              <input type="tel" id="pincode" name="pincode" maxlength="6" placeholder="6-digit PIN" required
+                autocomplete="postal-code">
+              <span class="valid-mark">✓</span>
+            </div>
+            <small class="error-msg" data-en="Enter 6-digit pincode" data-hi="6 अंकों का पिन कोड डालें"></small>
+          </div>
+
+          <!-- Complete Address Field -->
+          <div class="input-cell input-cell-address" id="cell-address">
+            <label for="fullAddress">
+              <span class="label-en">Delivery Address</span>
+              <span class="label-hi">/ पूरा पता</span>
+              <span class="req">*</span>
+            </label>
+            <div class="field-box">
+              <span class="input-icon">🏠</span>
+              <input type="text" id="fullAddress" name="fullAddress" placeholder="House no, Street, Landmark, Area"
+                required autocomplete="street-address">
+              <span class="valid-mark">✓</span>
+            </div>
+            <small class="error-msg" data-en="Enter delivery address" data-hi="पूरा पता लिखें"></small>
+          </div>
+
+        </div>
+
+        <!-- COD Status Pill -->
+        <div class="cod-status-strip">
+          <div class="cod-left">
+            <span class="cod-bullet">✓</span>
+            <strong data-en="Cash On Delivery (COD) - Free Express Delivery"
+              data-hi="कैश ऑन डिलीवरी (COD) - पूरे भारत में फ्री डिलीवरी">
+              Cash On Delivery (COD) - Free Express Delivery
+            </strong>
+          </div>
+          <span class="all-india-tag" data-en="🔒 100% Secret Packaging" data-hi="🔒 100% गुप्त पैकिंग">🔒 100% Secret
+            Packaging</span>
+        </div>
+
+        <!-- Submit Button with Pulsing Glow -->
+        <button type="submit" class="compact-order-btn" id="submitBtn">
+          <div class="btn-shine-bar"></div>
+          <div class="btn-inner-content">
+            <span class="btn-main-title" data-en="BOOK CASH ON DELIVERY ORDER →"
+              data-hi="कैश ऑन डिलीवरी आर्डर बुक करें →">
+              BOOK CASH ON DELIVERY ORDER →
+            </span>
+            <span class="btn-sub-detail">
+              <span data-en="Pay at Delivery: " data-hi="डिलीवरी पर देय: ">Pay at Delivery: </span>
+              <strong>₹3,499</strong> | <span data-en="Zero Advance Payment Required"
+                data-hi="पहले कोई पैसा नहीं देना">Zero Advance Payment Required</span>
+            </span>
+          </div>
+        </button>
+
+      </form>
+
       <!-- Combo Product Showcase Bar -->
       <div class="product-price-compact-bar">
         <div class="product-mini-thumb combo-hero-thumb">
@@ -219,123 +336,6 @@
             external care). Doctor will explain exact routine on call.</span>
         </div>
       </div>
-
-      <!-- Moving Bouncing Pointer Arrow -->
-      <div class="compact-pointer-bar">
-        <span class="bouncing-arrow-dot">↓</span>
-        <span class="pointer-text" data-en="Fill 4 quick details to place Cash On Delivery order"
-          data-hi="कैश ऑन डिलीवरी आर्डर के लिए नीचे 4 आसान जानकारी भरें">
-          Fill 4 quick details to place Cash On Delivery order
-        </span>
-        <span class="bouncing-arrow-dot">↓</span>
-      </div>
-
-      <!-- Compact Single-Screen Form -->
-      <form id="compactOrderForm" class="compact-form" novalidate>
-
-        <!-- Field 1 & 2 in Grid -->
-        <div class="form-grid-row">
-
-          <!-- Name Field -->
-          <div class="input-cell" id="cell-name">
-            <label for="fullName">
-              <span class="label-en">Full Name</span>
-              <span class="label-hi">/ पूरा नाम</span>
-              <span class="req">*</span>
-            </label>
-            <div class="field-box">
-              <span class="input-icon">👤</span>
-              <input type="text" id="fullName" name="fullName" placeholder="Enter Full Name" required
-                autocomplete="name">
-              <span class="valid-mark">✓</span>
-            </div>
-            <small class="error-msg" data-en="Enter full name" data-hi="पूरा नाम दर्ज करें"></small>
-          </div>
-
-          <!-- Mobile Number Field -->
-          <div class="input-cell" id="cell-phone">
-            <label for="phoneNumber">
-              <span class="label-en">Mobile Number</span>
-              <span class="label-hi">/ मोबाइल नंबर</span>
-              <span class="req">*</span>
-            </label>
-            <div class="field-box phone-box">
-              <span class="ind-prefix">🇮🇳 +91</span>
-              <input type="tel" id="phoneNumber" name="phoneNumber" maxlength="10" placeholder="10-digit number"
-                required autocomplete="tel">
-              <span class="valid-mark">✓</span>
-            </div>
-            <small class="error-msg" data-en="Enter valid 10-digit number" data-hi="10 अंकों का नंबर डालें"></small>
-          </div>
-
-        </div>
-
-        <div class="form-grid-row">
-
-          <!-- Pincode Field -->
-          <div class="input-cell" id="cell-pincode">
-            <label for="pincode">
-              <span class="label-en">Pincode</span>
-              <span class="label-hi">/ पिन कोड</span>
-              <span class="req">*</span>
-            </label>
-            <div class="field-box">
-              <span class="input-icon">📍</span>
-              <input type="tel" id="pincode" name="pincode" maxlength="6" placeholder="6-digit PIN" required
-                autocomplete="postal-code">
-              <span class="valid-mark">✓</span>
-            </div>
-            <small class="error-msg" data-en="Enter 6-digit pincode" data-hi="6 अंकों का पिन कोड डालें"></small>
-          </div>
-
-          <!-- Complete Address Field -->
-          <div class="input-cell input-cell-address" id="cell-address">
-            <label for="fullAddress">
-              <span class="label-en">Delivery Address</span>
-              <span class="label-hi">/ पूरा पता</span>
-              <span class="req">*</span>
-            </label>
-            <div class="field-box">
-              <span class="input-icon">🏠</span>
-              <input type="text" id="fullAddress" name="fullAddress" placeholder="House no, Street, Landmark, Area"
-                required autocomplete="street-address">
-              <span class="valid-mark">✓</span>
-            </div>
-            <small class="error-msg" data-en="Enter delivery address" data-hi="पूरा पता लिखें"></small>
-          </div>
-
-        </div>
-
-        <!-- COD Status Pill -->
-        <div class="cod-status-strip">
-          <div class="cod-left">
-            <span class="cod-bullet">✓</span>
-            <strong data-en="Cash On Delivery (COD) - Free Express Delivery"
-              data-hi="कैश ऑन डिलीवरी (COD) - पूरे भारत में फ्री डिलीवरी">
-              Cash On Delivery (COD) - Free Express Delivery
-            </strong>
-          </div>
-          <span class="all-india-tag" data-en="🔒 100% Secret Packaging" data-hi="🔒 100% गुप्त पैकिंग">🔒 100% Secret
-            Packaging</span>
-        </div>
-
-        <!-- Submit Button with Pulsing Glow -->
-        <button type="submit" class="compact-order-btn" id="submitBtn">
-          <div class="btn-shine-bar"></div>
-          <div class="btn-inner-content">
-            <span class="btn-main-title" data-en="BOOK CASH ON DELIVERY ORDER →"
-              data-hi="कैश ऑन डिलीवरी आर्डर बुक करें →">
-              BOOK CASH ON DELIVERY ORDER →
-            </span>
-            <span class="btn-sub-detail">
-              <span data-en="Pay at Delivery: " data-hi="डिलीवरी पर देय: ">Pay at Delivery: </span>
-              <strong>₹3,499</strong> | <span data-en="Zero Advance Payment Required"
-                data-hi="पहले कोई पैसा नहीं देना">Zero Advance Payment Required</span>
-            </span>
-          </div>
-        </button>
-
-      </form>
 
     </main>
 

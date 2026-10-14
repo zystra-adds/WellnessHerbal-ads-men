@@ -642,6 +642,7 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-dark); font-size: 
   flex-direction: column;
   gap: 11px;
   background: #ffffff;
+  border-bottom: 2px solid var(--border-light);
 }
 
 .form-grid-row {
