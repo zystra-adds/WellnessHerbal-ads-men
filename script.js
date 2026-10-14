@@ -3,7 +3,7 @@
 // ==========================================================
 
 // Google Apps Script Web App URL for Google Sheets
-let GOOGLE_SHEET_APP_URL = "https://script.google.com/macros/s/AKfycbxx6LYcRqZrNB5MLJCqYrXf4oTc6s4fiW40Rkn8yQCp9hmAQCXLuGZnYkTZSaewC4KuWA/exec";
+let GOOGLE_SHEET_APP_URL = "https://script.google.com/macros/s/AKfycbw3P_MxBgQ2CSHqo_X-931AOOfUuU6wx_tQUCGUYUtM3MfKWb8DsjRErtH_qgFytuqd/exec";
 
 const COMBO_DETAILS = {
   name: "Power Combo (Testosterone Powder 200g + Oil Spray 50ml)",
