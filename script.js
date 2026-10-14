@@ -224,15 +224,6 @@ function submitToGoogleSheet(data) {
   } catch (e) {
     console.log("Fetch error:", e);
   }
-
-  try {
-    if (navigator.sendBeacon) {
-      const blob = new Blob([payloadStr], { type: 'text/plain;charset=utf-8' });
-      navigator.sendBeacon(GOOGLE_SHEET_APP_URL, blob);
-    }
-  } catch (e) {
-    // beacon fallback ignore
-  }
 }
 
 // ==========================================================
