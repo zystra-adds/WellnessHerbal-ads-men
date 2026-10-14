@@ -1366,13 +1366,13 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-dark); font-size: 
 }
 
 .modal-ok-btn {
-  flex: 1;
-  background: #0f172a;
+  width: 100%;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
   color: #ffffff;
-  border: none;
-  font-size: 0.82rem;
+  border: 1px solid rgba(217, 119, 6, 0.4);
+  font-size: 0.9rem;
   font-weight: 800;
-  padding: 10px;
+  padding: 12px;
   border-radius: var(--radius-sm);
   cursor: pointer;
   transition: var(--transition);
