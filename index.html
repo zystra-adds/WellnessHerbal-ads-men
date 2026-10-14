@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Warecare Herbal - Curvy Bust Powder Quick Order</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="lang-dual">
+
+  <div class="app-viewport-container">
+    
+    <!-- Compact Brand Header with 2-Minute Timer & Language Switcher -->
+    <header class="compact-header">
+      <div class="brand-left">
+        <span class="brand-icon">🌿</span>
+        <div class="brand-titles">
+          <strong>WARECARE HERBAL</strong>
+          <small>WOMEN'S WELLNESS</small>
+        </div>
+      </div>
+
+      <!-- 2-Minute Urgency Timer -->
+      <div class="compact-timer-badge">
+        <span class="fire-icon">🔥</span>
+        <span class="timer-label" data-en="Offer ends:" data-hi="ऑफर समाप्त:">Offer ends:</span>
+        <strong id="timerDisplay">02:00</strong>
+      </div>
+
+      <!-- Language Switcher -->
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="dual" onclick="setLanguage('dual')">हिं/EN</button>
+        <button class="lang-btn" data-lang="hi" onclick="setLanguage('hi')">हिन्दी</button>
+        <button class="lang-btn" data-lang="en" onclick="setLanguage('en')">EN</button>
+      </div>
+    </header>
+
+    <!-- Main Order Form Card -->
+    <main class="single-frame-card">
+
+      <!-- Doctor Guidance & Privacy Banner -->
+      <div class="doctor-contact-banner">
+        <div class="doctor-line">
+          <span class="doctor-icon">👨‍⚕️</span>
+          <strong data-en="Our Expert doctors will contact you" data-hi="हमारे विशेषज्ञ डॉक्टर आपसे संपर्क करेंगे">
+            Our Expert doctors will contact you
+          </strong>
+        </div>
+        <div class="privacy-line">
+          <span class="lock-icon">🔒</span>
+          <span data-en="Aapka data 100% safe aur confidential rahega." data-hi="आपका डेटा 100% सुरक्षित और गोपनीय रहेगा।">
+            Aapka data 100% safe aur confidential rahega.
+          </span>
+        </div>
+      </div>
+
+      <!-- 3 Key Reference Pills -->
+      <div class="ref-pills-row">
+        <span class="ref-pill pill-ayurvedic">
+          <span class="pill-dot">🌿</span>
+          <span data-en="100% Ayurvedic" data-hi="100% आयुर्वेदिक">100% Ayurvedic</span>
+        </span>
+        <span class="ref-pill pill-safety">
+          <span data-en="No Side Effects" data-hi="कोई साइड इफ़ेक्ट नहीं">No Side Effects</span>
+        </span>
+        <span class="ref-pill pill-cod">
+          <span class="pill-dot">🚚</span>
+          <span data-en="Cash On Delivery" data-hi="कैश ऑन डिलीवरी">Cash On Delivery</span>
+        </span>
+      </div>
+
+      <!-- Compact Product Showcase & Zooming Price Box -->
+      <div class="product-price-compact-bar">
+        <div class="product-mini-thumb">
+          <img src="images/curvy_bust_powder.png" alt="Warecare Herbal Curvy Bust Powder" class="thumb-img">
+        </div>
+
+        <div class="product-mini-info">
+          <div class="product-title-row">
+            <h1 class="product-name" data-en="Curvy Bust Powder" data-hi="कर्वी बस्ट पाउडर">Curvy Bust Powder</h1>
+            <span class="delivery-all-india">🇮🇳 <span data-en="All India Delivery" data-hi="पूरे भारत में डिलीवरी">All India Delivery</span></span>
+          </div>
+
+          <!-- Pulsing Zoom-in Zoom-out Price Highlight -->
+          <div class="price-action-row">
+            <div class="price-wrapper">
+              <del class="mrp-old">₹2,999</del>
+              <div class="price-pulse-target">
+                <span class="curr-sign">₹</span>
+                <span class="price-val">1,999</span>
+              </div>
+            </div>
+            <div class="save-tag-badge">
+              <span data-en="SAVE ₹1,000 (33% OFF)" data-hi="₹1,000 छूट (33% OFF)">SAVE ₹1,000 (33% OFF)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Moving Bouncing Pointer Arrow -->
+      <div class="compact-pointer-bar">
+        <span class="bouncing-arrow-dot">↓</span>
+        <span class="pointer-text" data-en="Fill 4 quick details to place Cash On Delivery order" data-hi="कैश ऑन डिलीवरी आर्डर के लिए नीचे 4 आसान जानकारी भरें">
+          Fill 4 quick details to place Cash On Delivery order
+        </span>
+        <span class="bouncing-arrow-dot">↓</span>
+      </div>
+
+      <!-- Compact Single-Screen Form -->
+      <form id="compactOrderForm" class="compact-form" novalidate>
+        
+        <!-- Field 1 & 2 in Grid -->
+        <div class="form-grid-row">
+          
+          <!-- Name Field -->
+          <div class="input-cell" id="cell-name">
+            <label for="fullName">
+              <span class="label-en">Full Name</span>
+              <span class="label-hi">/ पूरा नाम</span>
+              <span class="req">*</span>
+            </label>
+            <div class="field-box">
+              <span class="input-icon">👤</span>
+              <input type="text" id="fullName" name="fullName" placeholder="Enter Full Name" required autocomplete="name">
+              <span class="valid-mark">✓</span>
+            </div>
+            <small class="error-msg" data-en="Enter full name" data-hi="पूरा नाम दर्ज करें"></small>
+          </div>
+
+          <!-- Mobile Number Field -->
+          <div class="input-cell" id="cell-phone">
+            <label for="phoneNumber">
+              <span class="label-en">Mobile Number</span>
+              <span class="label-hi">/ मोबाइल नंबर</span>
+              <span class="req">*</span>
+            </label>
+            <div class="field-box phone-box">
+              <span class="ind-prefix">🇮🇳 +91</span>
+              <input type="tel" id="phoneNumber" name="phoneNumber" maxlength="10" placeholder="10-digit number" required autocomplete="tel">
+              <span class="valid-mark">✓</span>
+            </div>
+            <small class="error-msg" data-en="Enter valid 10-digit number" data-hi="10 अंकों का नंबर डालें"></small>
+          </div>
+
+        </div>
+
+        <div class="form-grid-row">
+          
+          <!-- Pincode Field -->
+          <div class="input-cell" id="cell-pincode">
+            <label for="pincode">
+              <span class="label-en">Pincode</span>
+              <span class="label-hi">/ पिन कोड</span>
+              <span class="req">*</span>
+            </label>
+            <div class="field-box">
+              <span class="input-icon">📍</span>
+              <input type="tel" id="pincode" name="pincode" maxlength="6" placeholder="6-digit PIN" required autocomplete="postal-code">
+              <span class="valid-mark">✓</span>
+            </div>
+            <small class="error-msg" data-en="Enter 6-digit pincode" data-hi="6 अंकों का पिन कोड डालें"></small>
+          </div>
+
+          <!-- Complete Address Field -->
+          <div class="input-cell input-cell-address" id="cell-address">
+            <label for="fullAddress">
+              <span class="label-en">Delivery Address</span>
+              <span class="label-hi">/ पूरा पता</span>
+              <span class="req">*</span>
+            </label>
+            <div class="field-box">
+              <span class="input-icon">🏠</span>
+              <input type="text" id="fullAddress" name="fullAddress" placeholder="House no, Street, Area" required autocomplete="street-address">
+              <span class="valid-mark">✓</span>
+            </div>
+            <small class="error-msg" data-en="Enter delivery address" data-hi="पूरा पता लिखें"></small>
+          </div>
+
+        </div>
+
+        <!-- COD Status Pill -->
+        <div class="cod-status-strip">
+          <div class="cod-left">
+            <span class="cod-bullet">✓</span>
+            <strong data-en="Cash On Delivery (COD) - Free Fast Delivery" data-hi="कैश ऑन डिलीवरी (COD) - फ्री डिलीवरी">Cash On Delivery (COD) - Free Fast Delivery</strong>
+          </div>
+          <span class="all-india-tag" data-en="Discreet Packaging" data-hi="गुप्त पार्सल">Discreet Packaging</span>
+        </div>
+
+        <!-- Submit Button with Pulsing Glow -->
+        <button type="submit" class="compact-order-btn" id="submitBtn">
+          <div class="btn-shine-bar"></div>
+          <div class="btn-inner-content">
+            <span class="btn-main-title" data-en="BOOK CASH ON DELIVERY ORDER →" data-hi="कैश ऑन डिलीवरी आर्डर बुक करें →">
+              BOOK CASH ON DELIVERY ORDER →
+            </span>
+            <span class="btn-sub-detail">
+              <span data-en="Pay at Delivery: " data-hi="डिलीवरी पर देय: ">Pay at Delivery: </span>
+              <strong>₹1,999</strong> | <span data-en="Pay when parcel arrives" data-hi="पार्सल मिलने पर पैसे दें">Pay when parcel arrives</span>
+            </span>
+          </div>
+        </button>
+
+      </form>
+
+    </main>
+
+    <!-- Customer Lifestyle Photo & Genuine Reviews Section -->
+    <section class="customer-proof-section">
+      
+      <!-- Customer Holding Product Showcase Card -->
+      <div class="lifestyle-photo-card">
+        <div class="photo-img-wrap">
+          <img src="images/Gemini_Generated_Image_ydtybsydtybsydty.jpg" alt="Happy Customer with Warecare Curvy Bust Powder" class="lifestyle-img" loading="lazy">
+          <span class="verified-photo-badge">✓ 100% Real Customer</span>
+        </div>
+      </div>
+
+      <!-- Genuine Customer Reviews List -->
+      <div class="reviews-header-bar">
+        <span class="reviews-title-tag" data-en="VERIFIED CUSTOMER REVIEWS" data-hi="ग्राहकों की सच्ची राय">VERIFIED CUSTOMER REVIEWS</span>
+        <div class="rating-overall">
+          <span class="rating-score">4.9/5</span>
+          <span class="stars-gold">★★★★★</span>
+          <span class="total-reviews">(18,400+ Orders)</span>
+        </div>
+      </div>
+
+      <div class="reviews-cards-list">
+        
+        <!-- Review 1 -->
+        <div class="single-review-card">
+          <div class="review-top">
+            <div class="reviewer-badge-info">
+              <span class="avatar-circle">NS</span>
+              <div>
+                <strong class="reviewer-name">Neha Sharma</strong>
+                <span class="reviewer-city">New Delhi</span>
+              </div>
+            </div>
+            <span class="verified-purchase-pill">✓ Verified Purchase</span>
+          </div>
+          <div class="stars-gold">★★★★★</div>
+          <p class="review-comment" data-en="I ordered via Cash on Delivery and received it in discreet packaging within 3 days. It mixes easily with warm milk and tastes pleasant. Noticed visible firmness within 3 weeks. Really happy with the results!" data-hi="कैश ऑन डिलीवरी से ऑर्डर किया था और 3 दिन में ही सीलबंद पार्सल मिल गया। हल्के गर्म दूध में आसानी से घुल जाता है और टेस्ट भी बहुत अच्छा है। 3 हफ्ते में ही कसावट में बहुत बढ़िया फ़र्क दिखने लगा!">
+            I ordered via Cash on Delivery and received it in discreet packaging within 3 days. It mixes easily with warm milk and tastes pleasant. Noticed visible firmness within 3 weeks. Really happy with the results!
+          </p>
+          <span class="review-date">Reviewed 3 days ago</span>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="single-review-card">
+          <div class="review-top">
+            <div class="reviewer-badge-info">
+              <span class="avatar-circle">AK</span>
+              <div>
+                <strong class="reviewer-name">Ananya Kulkarni</strong>
+                <span class="reviewer-city">Pune</span>
+              </div>
+            </div>
+            <span class="verified-purchase-pill">✓ Verified Purchase</span>
+          </div>
+          <div class="stars-gold">★★★★★</div>
+          <p class="review-comment" data-en="Honestly, I was a bit skeptical at first, but after 3-4 weeks of regular daily use, the visible improvement in shape and firmness is amazing! I feel so much more confident wearing my favourite dresses now." data-hi="शुरुआत में थोड़ा संकोच था, लेकिन 3-4 हफ्ते नियमित इस्तेमाल करने के बाद शेप और कसावट में बहुत ही बढ़िया बदलाव आया! अब अपनी पसंद की ड्रेस पहनते समय बहुत कॉन्फिडेंट फील होता है।">
+            Honestly, I was a bit skeptical at first, but after 3-4 weeks of regular daily use, the visible improvement in shape and firmness is amazing! I feel so much more confident wearing my favourite dresses now.
+          </p>
+          <span class="review-date">Reviewed 5 days ago</span>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="single-review-card">
+          <div class="review-top">
+            <div class="reviewer-badge-info">
+              <span class="avatar-circle">KP</span>
+              <div>
+                <strong class="reviewer-name">Kavita Patel</strong>
+                <span class="reviewer-city">Ahmedabad</span>
+              </div>
+            </div>
+            <span class="verified-purchase-pill">✓ Verified Purchase</span>
+          </div>
+          <div class="stars-gold">★★★★★</div>
+          <p class="review-comment" data-en="Wonderful experience! The herbal doctor called me right after booking to explain the exact dosage and daily diet routine. Being 100% Ayurvedic, it was completely safe with zero side effects." data-hi="बहुत ही बढ़िया अनुभव रहा! आर्डर करते ही आयुर्वेदिक डॉक्टर का कॉल आया और उन्होंने खुराक व सही डाइट अच्छे से समझाई। 100% नेचुरल होने से कोई साइड इफ़ेक्ट नहीं हुआ।">
+            Wonderful experience! The herbal doctor called me right after booking to explain the exact dosage and daily diet routine. Being 100% Ayurvedic, it was completely safe with zero side effects.
+          </p>
+          <span class="review-date">Reviewed 1 week ago</span>
+        </div>
+
+        <!-- Review 4 -->
+        <div class="single-review-card">
+          <div class="review-top">
+            <div class="reviewer-badge-info">
+              <span class="avatar-circle">PR</span>
+              <div>
+                <strong class="reviewer-name">Priyanka Roy</strong>
+                <span class="reviewer-city">Kolkata</span>
+              </div>
+            </div>
+            <span class="verified-purchase-pill">✓ Verified Purchase</span>
+          </div>
+          <div class="stars-gold">★★★★★</div>
+          <p class="review-comment" data-en="This is my second box order! The natural softness and firmness improved step by step without any harm. The delivery package was completely private. 100% genuine product!" data-hi="यह मेरा दूसरा डिब्बा है! धीरे-धीरे बिना किसी परेशानी के बहुत ही नेचुरल और बढ़िया रिस्पॉन्स मिला। डिलीवरी पार्सल भी पूरी तरह से गुप्त रखा गया था। 100% असली प्रोडक्ट!">
+            This is my second box order! The natural softness and firmness improved step by step without any harm. The delivery package was completely private. 100% genuine product!
+          </p>
+          <span class="review-date">Reviewed 2 weeks ago</span>
+        </div>
+
+      </div>
+
+      <!-- Quick Scroll to Top Order Button -->
+      <div class="bottom-order-trigger">
+        <button class="scroll-up-order-btn" onclick="scrollToTopForm()">
+          <span data-en="↑ ORDER NOW (CASH ON DELIVERY - ₹1,999)" data-hi="↑ अभी आर्डर करें (कैश ऑन डिलीवरी - ₹1,999)">
+            ↑ ORDER NOW (CASH ON DELIVERY - ₹1,999)
+          </span>
+        </button>
+      </div>
+
+    </section>
+
+    <footer class="app-footer">
+      <p>© 2026 Warecare Herbal. 100% Ayurvedic Care & Discreet Delivery.</p>
+    </footer>
+
+  </div>
+
+  <!-- Order Success / Thank You Modal Popup -->
+  <div class="success-modal-overlay" id="orderSuccessModal">
+    <div class="success-dialog-card">
+      <button class="modal-close" onclick="closeSuccessModal()" title="Close">✕</button>
+      
+      <div class="success-check-badge">
+        <div class="check-ring-pulse"></div>
+        <span class="check-symbol">✓</span>
+      </div>
+      
+      <h3 class="modal-h3" data-en="Your Order is Registered! 🎉" data-hi="आपका आर्डर बुक हो गया है! 🎉">
+        Your Order is Registered! 🎉
+      </h3>
+      <p class="modal-desc" data-en="Thank you for choosing Warecare Herbal. Our team will contact you shortly on your number to confirm delivery." data-hi="वेयरकेयर चुनने के लिए धन्यवाद। हमारी टीम जल्द ही आपसे संपर्क करके आर्डर कन्फर्म करेगी।">
+        Thank you for choosing Warecare Herbal. Our team will contact you shortly on your number to confirm delivery.
+      </p>
+
+      <div class="modal-receipt">
+        <div class="rec-line">
+          <span class="rec-label" data-en="Order ID:" data-hi="आर्डर नंबर:">Order ID:</span>
+          <strong class="rec-id-val" id="receiptOrderId">#WC-89104</strong>
+        </div>
+        <div class="rec-line">
+          <span class="rec-label" data-en="Product:" data-hi="प्रोडक्ट:">Product:</span>
+          <span>Warecare Curvy Bust Powder (200g)</span>
+        </div>
+        <div class="rec-line">
+          <span class="rec-label" data-en="Customer:" data-hi="ग्राहक का नाम:">Customer:</span>
+          <strong id="receiptName">-</strong>
+        </div>
+        <div class="rec-line">
+          <span class="rec-label" data-en="Mobile:" data-hi="मोबाइल नंबर:">Mobile:</span>
+          <strong id="receiptPhone">-</strong>
+        </div>
+        <div class="rec-line">
+          <span class="rec-label" data-en="Delivery Address:" data-hi="डिलीवरी पता:">Delivery Address:</span>
+          <span id="receiptAddress">-</span>
+        </div>
+        <div class="rec-line rec-total">
+          <span data-en="Amount Payable at Delivery:" data-hi="डिलीवरी पर देय राशि:">Amount Payable at Delivery:</span>
+          <strong class="rec-amount">₹1,999 (COD)</strong>
+        </div>
+      </div>
+
+      <div class="team-contact-notice">
+        👨‍⚕️ <span data-en="Our specialist doctor will call you to explain dosage." data-hi="हमारे डॉक्टर आपको खुराक समझाने के लिए कॉल करेंगे।">Our specialist doctor will call you to explain dosage.</span>
+      </div>
+
+      <div class="modal-btn-stack">
+        <a id="whatsappConfirmLink" class="modal-wa-btn" href="#" target="_blank">
+          💬 <span data-en="Confirm on WhatsApp" data-hi="व्हाट्सएप पर कन्फर्म करें">Confirm on WhatsApp</span>
+        </a>
+        <button class="modal-ok-btn" onclick="closeSuccessModal()">
+          <span data-en="Done" data-hi="हो गया">Done</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
