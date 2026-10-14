@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Warecare Herbal - Curvy Bust Powder Quick Order</title>
+  <title>Wellness Herbal - Men's Ayurvedic Vitality & Strength | Quick Order</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&family=Noto+Sans+Devanagari:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="lang-dual">
@@ -16,10 +16,10 @@
     <!-- Compact Brand Header with 2-Minute Timer & Language Switcher -->
     <header class="compact-header">
       <div class="brand-left">
-        <span class="brand-icon">🌿</span>
+        <span class="brand-icon">👑</span>
         <div class="brand-titles">
-          <strong>WARECARE HERBAL</strong>
-          <small>WOMEN'S WELLNESS</small>
+          <strong>WELLNESS HERBAL</strong>
+          <small>MEN'S AYURVEDIC VITALITY</small>
         </div>
       </div>
 
@@ -45,14 +45,14 @@
       <div class="doctor-contact-banner">
         <div class="doctor-line">
           <span class="doctor-icon">👨‍⚕️</span>
-          <strong data-en="Our Expert doctors will contact you" data-hi="हमारे विशेषज्ञ डॉक्टर आपसे संपर्क करेंगे">
-            Our Expert doctors will contact you
+          <strong data-en="Our Senior Ayurvedic Doctor will contact you" data-hi="हमारे वरिष्ठ आयुर्वेदिक डॉक्टर आपसे संपर्क करेंगे">
+            Our Senior Ayurvedic Doctor will contact you
           </strong>
         </div>
         <div class="privacy-line">
           <span class="lock-icon">🔒</span>
-          <span data-en="Aapka data 100% safe aur confidential rahega." data-hi="आपका डेटा 100% सुरक्षित और गोपनीय रहेगा।">
-            Aapka data 100% safe aur confidential rahega.
+          <span data-en="100% Confidential & Secret Packaging (Discreet Delivery)" data-hi="100% गुप्त और सीलबंद पार्सल (गोपनीय डिलीवरी)">
+            100% Confidential & Secret Packaging (Discreet Delivery)
           </span>
         </div>
       </div>
@@ -61,10 +61,11 @@
       <div class="ref-pills-row">
         <span class="ref-pill pill-ayurvedic">
           <span class="pill-dot">🌿</span>
-          <span data-en="100% Ayurvedic" data-hi="100% आयुर्वेदिक">100% Ayurvedic</span>
+          <span data-en="100% Ayurvedic Formula" data-hi="100% शुद्ध आयुर्वेदिक">100% Ayurvedic Formula</span>
         </span>
         <span class="ref-pill pill-safety">
-          <span data-en="No Side Effects" data-hi="कोई साइड इफ़ेक्ट नहीं">No Side Effects</span>
+          <span class="pill-dot">🛡️</span>
+          <span data-en="Zero Side Effects" data-hi="कोई साइड इफ़ेक्ट नहीं">Zero Side Effects</span>
         </span>
         <span class="ref-pill pill-cod">
           <span class="pill-dot">🚚</span>
@@ -72,29 +73,105 @@
         </span>
       </div>
 
-      <!-- Compact Product Showcase & Zooming Price Box -->
+      <!-- Product Selection Tabs -->
+      <div class="product-selector-wrapper">
+        <div class="selector-heading">
+          <span class="sel-icon">⚡</span>
+          <span data-en="SELECT YOUR PRODUCT / COMBO" data-hi="अपना प्रोडक्ट या कॉम्बो चुनें">SELECT YOUR PRODUCT / COMBO</span>
+        </div>
+        
+        <div class="product-options-grid">
+          
+          <!-- Option 1: Testosterone Plus Powder -->
+          <div class="product-opt-card active" data-product-id="powder" onclick="selectProduct('powder')">
+            <div class="opt-badge best-seller" data-en="TOP SELLER" data-hi="सबसे लोकप्रिय">TOP SELLER</div>
+            <div class="opt-radio"><span class="radio-circle"></span></div>
+            <div class="opt-img-wrap">
+              <img src="images/testosterone_plus_powder.png" alt="Testosterone Plus Powder">
+            </div>
+            <div class="opt-info">
+              <strong class="opt-name" data-en="Testosterone Plus Powder" data-hi="टेस्टोस्टेरोन प्लस पाउडर">Testosterone Plus Powder</strong>
+              <span class="opt-weight">200 GRAM • Daily Energy & Strength</span>
+              <div class="opt-pricing">
+                <span class="opt-curr-price">₹1,499</span>
+                <del class="opt-mrp">₹2,499</del>
+                <span class="opt-save-badge">40% OFF</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Option 2: Steel Man Gold Oil Spray -->
+          <div class="product-opt-card" data-product-id="spray" onclick="selectProduct('spray')">
+            <div class="opt-badge" data-en="INSTANT ACTION" data-hi="तुरंत असर">INSTANT ACTION</div>
+            <div class="opt-radio"><span class="radio-circle"></span></div>
+            <div class="opt-img-wrap">
+              <img src="images/steelman_gold_spray.png" alt="Steel Man Gold Oil Spray">
+            </div>
+            <div class="opt-info">
+              <strong class="opt-name" data-en="Steel Man Gold Oil Spray" data-hi="स्टील मैन गोल्ड ऑयल स्प्रे">Steel Man Gold Oil Spray</strong>
+              <span class="opt-weight">50 ML • Power, Vitality & Stamina</span>
+              <div class="opt-pricing">
+                <span class="opt-curr-price">₹999</span>
+                <del class="opt-mrp">₹1,699</del>
+                <span class="opt-save-badge">41% OFF</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Option 3: Mega Power Combo -->
+          <div class="product-opt-card combo-card" data-product-id="combo" onclick="selectProduct('combo')">
+            <div class="opt-badge mega-save" data-en="BEST VALUE COMBO" data-hi="महा बचत कॉम्बो">BEST VALUE COMBO</div>
+            <div class="opt-radio"><span class="radio-circle"></span></div>
+            <div class="opt-img-wrap combo-dual-img">
+              <img src="images/testosterone_plus_powder.png" class="combo-img-1" alt="Powder">
+              <img src="images/steelman_gold_spray.png" class="combo-img-2" alt="Spray">
+            </div>
+            <div class="opt-info">
+              <strong class="opt-name" data-en="Full Power Combo (Powder + Spray)" data-hi="फुल पावर कॉम्बो (पाउडर + स्प्रे)">Full Power Combo (Powder + Spray)</strong>
+              <span class="opt-weight">Powder 200g + Oil Spray 50ml (Complete Care)</span>
+              <div class="opt-pricing">
+                <span class="opt-curr-price">₹2,199</span>
+                <del class="opt-mrp">₹4,198</del>
+                <span class="opt-save-badge gold-save">SAVE ₹1,999 (48% OFF)</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Compact Active Product Showcase & Zooming Price Box -->
       <div class="product-price-compact-bar">
         <div class="product-mini-thumb">
-          <img src="images/curvy_bust_powder.png" alt="Warecare Herbal Curvy Bust Powder" class="thumb-img">
+          <img id="activeProductImg" src="images/testosterone_plus_powder.png" alt="Testosterone Plus Powder" class="thumb-img">
+          <span class="active-tag-pill" id="activeProductTag">🦁 LION FORMULA</span>
         </div>
 
         <div class="product-mini-info">
           <div class="product-title-row">
-            <h1 class="product-name" data-en="Curvy Bust Powder" data-hi="कर्वी बस्ट पाउडर">Curvy Bust Powder</h1>
-            <span class="delivery-all-india">🇮🇳 <span data-en="All India Delivery" data-hi="पूरे भारत में डिलीवरी">All India Delivery</span></span>
+            <h1 class="product-name" id="activeProductName" data-en="Testosterone Plus Powder (200g)" data-hi="टेस्टोस्टेरोन प्लस पाउडर (200g)">
+              Testosterone Plus Powder (200g)
+            </h1>
+            <span class="delivery-all-india">🇮🇳 <span data-en="Free Fast Delivery" data-hi="फ्री फ़ास्ट डिलीवरी">Free Fast Delivery</span></span>
+          </div>
+
+          <div class="product-usp-badges">
+            <span class="usp-badge">⚡ Boosts Energy</span>
+            <span class="usp-badge">💪 Supports Vitality</span>
+            <span class="usp-badge">🔥 Improves Strength</span>
           </div>
 
           <!-- Pulsing Zoom-in Zoom-out Price Highlight -->
           <div class="price-action-row">
             <div class="price-wrapper">
-              <del class="mrp-old">₹2,999</del>
+              <del class="mrp-old" id="activeMrp">₹2,499</del>
               <div class="price-pulse-target">
                 <span class="curr-sign">₹</span>
-                <span class="price-val">1,999</span>
+                <span class="price-val" id="activePriceVal">1,499</span>
               </div>
             </div>
             <div class="save-tag-badge">
-              <span data-en="SAVE ₹1,000 (33% OFF)" data-hi="₹1,000 छूट (33% OFF)">SAVE ₹1,000 (33% OFF)</span>
+              <span id="activeSaveTag" data-en="SAVE ₹1,000 (40% OFF)" data-hi="₹1,000 छूट (40% OFF)">SAVE ₹1,000 (40% OFF)</span>
             </div>
           </div>
         </div>
@@ -173,7 +250,7 @@
             </label>
             <div class="field-box">
               <span class="input-icon">🏠</span>
-              <input type="text" id="fullAddress" name="fullAddress" placeholder="House no, Street, Area" required autocomplete="street-address">
+              <input type="text" id="fullAddress" name="fullAddress" placeholder="House no, Street, Landmark, Area" required autocomplete="street-address">
               <span class="valid-mark">✓</span>
             </div>
             <small class="error-msg" data-en="Enter delivery address" data-hi="पूरा पता लिखें"></small>
@@ -185,9 +262,11 @@
         <div class="cod-status-strip">
           <div class="cod-left">
             <span class="cod-bullet">✓</span>
-            <strong data-en="Cash On Delivery (COD) - Free Fast Delivery" data-hi="कैश ऑन डिलीवरी (COD) - फ्री डिलीवरी">Cash On Delivery (COD) - Free Fast Delivery</strong>
+            <strong data-en="Cash On Delivery (COD) - Pay when parcel arrives" data-hi="कैश ऑन डिलीवरी (COD) - पार्सल मिलने पर पैसे दें">
+              Cash On Delivery (COD) - Pay when parcel arrives
+            </strong>
           </div>
-          <span class="all-india-tag" data-en="Discreet Packaging" data-hi="गुप्त पार्सल">Discreet Packaging</span>
+          <span class="all-india-tag" data-en="🔒 100% Secret Packaging" data-hi="🔒 100% गुप्त पैकिंग">🔒 100% Secret Packaging</span>
         </div>
 
         <!-- Submit Button with Pulsing Glow -->
@@ -199,7 +278,7 @@
             </span>
             <span class="btn-sub-detail">
               <span data-en="Pay at Delivery: " data-hi="डिलीवरी पर देय: ">Pay at Delivery: </span>
-              <strong>₹1,999</strong> | <span data-en="Pay when parcel arrives" data-hi="पार्सल मिलने पर पैसे दें">Pay when parcel arrives</span>
+              <strong id="btnPayAmount">₹1,499</strong> | <span data-en="Zero Advance Payment Required" data-hi="पहले कोई पैसा नहीं देना">Zero Advance Payment Required</span>
             </span>
           </div>
         </button>
@@ -208,24 +287,61 @@
 
     </main>
 
+    <!-- Key Ingredients Showcase -->
+    <section class="ingredients-section">
+      <div class="ingredients-title">
+        <span class="ing-badge">100% SHUDDH AYURVEDIC</span>
+        <h3 data-en="Powered by Ancient Herbs & Pure Extracts" data-hi="प्राचीन जड़ी-बूटियों और शुद्ध अर्क से निर्मित">Powered by Ancient Herbs & Pure Extracts</h3>
+      </div>
+      <div class="ingredients-grid">
+        <div class="ing-item">
+          <div class="ing-icon">🏔️</div>
+          <strong>Shilajit</strong>
+          <small data-en="Strength & Stamina" data-hi="शक्ति और स्टैमिना">Strength & Stamina</small>
+        </div>
+        <div class="ing-item">
+          <div class="ing-icon">🌿</div>
+          <strong>Ashwagandha</strong>
+          <small data-en="Vitality & Energy" data-hi="ऊर्जा और स्फूर्ति">Vitality & Energy</small>
+        </div>
+        <div class="ing-item">
+          <div class="ing-icon">🌱</div>
+          <strong>Safed Musli</strong>
+          <small data-en="Endurance Booster" data-hi="शारीरिक मजबूती">Endurance Booster</small>
+        </div>
+        <div class="ing-item">
+          <div class="ing-icon">🪵</div>
+          <strong>Gokshura</strong>
+          <small data-en="Hormonal Support" data-hi="प्राकृतिक ताकत">Hormonal Support</small>
+        </div>
+      </div>
+    </section>
+
     <!-- Customer Lifestyle Photo & Genuine Reviews Section -->
     <section class="customer-proof-section">
       
       <!-- Customer Holding Product Showcase Card -->
       <div class="lifestyle-photo-card">
         <div class="photo-img-wrap">
-          <img src="images/Gemini_Generated_Image_ydtybsydtybsydty.jpg" alt="Happy Customer with Warecare Curvy Bust Powder" class="lifestyle-img" loading="lazy">
+          <img src="images/customer_review.jpg" alt="Satisfied Customer with Wellness Herbal Supplement" class="lifestyle-img" loading="lazy">
           <span class="verified-photo-badge">✓ 100% Real Customer</span>
+        </div>
+        <div class="lifestyle-caption">
+          <strong>"3 hafte me hi energy aur stamina me behtareen asar dikha!"</strong>
+          <span>— Rahul M., Verified Customer (New Delhi)</span>
         </div>
       </div>
 
       <!-- Genuine Customer Reviews List -->
       <div class="reviews-header-bar">
-        <span class="reviews-title-tag" data-en="VERIFIED CUSTOMER REVIEWS" data-hi="ग्राहकों की सच्ची राय">VERIFIED CUSTOMER REVIEWS</span>
+        <div class="reviews-title-wrap">
+          <span class="reviews-title-tag" data-en="VERIFIED CUSTOMER REVIEWS" data-hi="सत्यापित ग्राहकों की राय">VERIFIED CUSTOMER REVIEWS</span>
+          <small class="reviews-subtitle" data-en="Real Men, Real Ayurvedic Results" data-hi="सच्चे परिणाम, प्राकृतिक आयुर्वेदिक अनुभव">Real Men, Real Ayurvedic Results</small>
+        </div>
         <div class="rating-overall">
           <span class="rating-score">4.9/5</span>
           <span class="stars-gold">★★★★★</span>
-          <span class="total-reviews">(18,400+ Orders)</span>
+          <span class="total-reviews">(14,800+ Orders)</span>
         </div>
       </div>
 
@@ -235,76 +351,88 @@
         <div class="single-review-card">
           <div class="review-top">
             <div class="reviewer-badge-info">
-              <span class="avatar-circle">NS</span>
+              <span class="avatar-circle">VR</span>
               <div>
-                <strong class="reviewer-name">Neha Sharma</strong>
-                <span class="reviewer-city">New Delhi</span>
+                <strong class="reviewer-name">Vikram Rathore</strong>
+                <span class="reviewer-city">Jaipur, Rajasthan</span>
               </div>
             </div>
             <span class="verified-purchase-pill">✓ Verified Purchase</span>
           </div>
           <div class="stars-gold">★★★★★</div>
-          <p class="review-comment" data-en="I ordered via Cash on Delivery and received it in discreet packaging within 3 days. It mixes easily with warm milk and tastes pleasant. Noticed visible firmness within 3 weeks. Really happy with the results!" data-hi="कैश ऑन डिलीवरी से ऑर्डर किया था और 3 दिन में ही सीलबंद पार्सल मिल गया। हल्के गर्म दूध में आसानी से घुल जाता है और टेस्ट भी बहुत अच्छा है। 3 हफ्ते में ही कसावट में बहुत बढ़िया फ़र्क दिखने लगा!">
-            I ordered via Cash on Delivery and received it in discreet packaging within 3 days. It mixes easily with warm milk and tastes pleasant. Noticed visible firmness within 3 weeks. Really happy with the results!
+          <p class="review-comment" data-en="I have been taking Testosterone Plus Powder with warm milk for 3 weeks now. The constant fatigue and low energy from office stress is completely gone. Stamina during workouts and throughout the day is on another level. Pure Ayurvedic, zero acidity or side effects!" data-hi="टेस्टोस्टेरोन प्लस पाउडर को हल्के गर्म दूध के साथ 3 हफ्ते से ले रहा हूँ। ऑफिस के तनाव से होने वाली दिनभर की थकान बिल्कुल खत्म हो गई है। स्टैमिना और स्फूर्ति में गज़ब का बदलाव आया है। 100% आयुर्वेदिक है, कोई एसिडिटी या साइड इफ़ेक्ट नहीं!">
+            I have been taking Testosterone Plus Powder with warm milk for 3 weeks now. The constant fatigue and low energy from office stress is completely gone. Stamina during workouts and throughout the day is on another level. Pure Ayurvedic, zero acidity or side effects!
           </p>
-          <span class="review-date">Reviewed 3 days ago</span>
+          <div class="review-footer-info">
+            <span class="review-product-tag">Purchased: Testosterone Plus Powder</span>
+            <span class="review-date">Reviewed 3 days ago</span>
+          </div>
         </div>
 
         <!-- Review 2 -->
         <div class="single-review-card">
           <div class="review-top">
             <div class="reviewer-badge-info">
-              <span class="avatar-circle">AK</span>
+              <span class="avatar-circle">RV</span>
               <div>
-                <strong class="reviewer-name">Ananya Kulkarni</strong>
-                <span class="reviewer-city">Pune</span>
+                <strong class="reviewer-name">Rajesh Verma</strong>
+                <span class="reviewer-city">Lucknow, UP</span>
               </div>
             </div>
             <span class="verified-purchase-pill">✓ Verified Purchase</span>
           </div>
           <div class="stars-gold">★★★★★</div>
-          <p class="review-comment" data-en="Honestly, I was a bit skeptical at first, but after 3-4 weeks of regular daily use, the visible improvement in shape and firmness is amazing! I feel so much more confident wearing my favourite dresses now." data-hi="शुरुआत में थोड़ा संकोच था, लेकिन 3-4 हफ्ते नियमित इस्तेमाल करने के बाद शेप और कसावट में बहुत ही बढ़िया बदलाव आया! अब अपनी पसंद की ड्रेस पहनते समय बहुत कॉन्फिडेंट फील होता है।">
-            Honestly, I was a bit skeptical at first, but after 3-4 weeks of regular daily use, the visible improvement in shape and firmness is amazing! I feel so much more confident wearing my favourite dresses now.
+          <p class="review-comment" data-en="The packaging was 100% discreet and confidential, with no product name on the outer box which I really appreciated. After ordering, the doctor called to explain the daily routine. Delivered in 3 days with Cash on Delivery. Very trustworthy brand." data-hi="पार्सल की पैकिंग पूरी तरह गुप्त और सीलबंद थी, डिब्बे के बाहर प्रोडक्ट का कोई नाम नहीं लिखा था जो मुझे सबसे अच्छा लगा। आर्डर के बाद डॉक्टर साहब का कॉल आया और उन्होंने इस्तेमाल का सही तरीका समझाया। 3 दिन में कैश ऑन डिलीवरी से पार्सल मिल गया!">
+            The packaging was 100% discreet and confidential, with no product name on the outer box which I really appreciated. After ordering, the doctor called to explain the daily routine. Delivered in 3 days with Cash on Delivery. Very trustworthy brand.
           </p>
-          <span class="review-date">Reviewed 5 days ago</span>
+          <div class="review-footer-info">
+            <span class="review-product-tag">Purchased: Steel Man Gold Oil Spray</span>
+            <span class="review-date">Reviewed 5 days ago</span>
+          </div>
         </div>
 
         <!-- Review 3 -->
-        <div class="single-review-card">
+        <div class="single-review-card highlight-review">
           <div class="review-top">
             <div class="reviewer-badge-info">
-              <span class="avatar-circle">KP</span>
+              <span class="avatar-circle">AP</span>
               <div>
-                <strong class="reviewer-name">Kavita Patel</strong>
-                <span class="reviewer-city">Ahmedabad</span>
+                <strong class="reviewer-name">Amit Patel</strong>
+                <span class="reviewer-city">Surat, Gujarat</span>
               </div>
             </div>
             <span class="verified-purchase-pill">✓ Verified Purchase</span>
           </div>
           <div class="stars-gold">★★★★★</div>
-          <p class="review-comment" data-en="Wonderful experience! The herbal doctor called me right after booking to explain the exact dosage and daily diet routine. Being 100% Ayurvedic, it was completely safe with zero side effects." data-hi="बहुत ही बढ़िया अनुभव रहा! आर्डर करते ही आयुर्वेदिक डॉक्टर का कॉल आया और उन्होंने खुराक व सही डाइट अच्छे से समझाई। 100% नेचुरल होने से कोई साइड इफ़ेक्ट नहीं हुआ।">
-            Wonderful experience! The herbal doctor called me right after booking to explain the exact dosage and daily diet routine. Being 100% Ayurvedic, it was completely safe with zero side effects.
+          <p class="review-comment" data-en="I ordered the Mega Power Combo (Powder + Spray). Best decision! Within 10 to 12 days, I felt a solid surge in vigor, strength, and endurance. The spray absorbs fast without sticky mess and the powder mixes nicely. Worth every single rupee!" data-hi="मैंने फुल पावर कॉम्बो (पाउडर + ऑयल स्प्रे) मंगाया था। 10-12 दिनों में ही शरीर में शक्ति, स्टैमिना और स्फूर्ति में ज़बरदस्त फ़र्क महसूस हुआ। स्प्रे तुरंत सोख लेता है और पाउडर भी आसानी से घुल जाता है। पैसा वसूल कॉम्बो है!">
+            I ordered the Mega Power Combo (Powder + Spray). Best decision! Within 10 to 12 days, I felt a solid surge in vigor, strength, and endurance. The spray absorbs fast without sticky mess and the powder mixes nicely. Worth every single rupee!
           </p>
-          <span class="review-date">Reviewed 1 week ago</span>
+          <div class="review-footer-info">
+            <span class="review-product-tag">Purchased: Full Power Combo Pack</span>
+            <span class="review-date">Reviewed 1 week ago</span>
+          </div>
         </div>
 
         <!-- Review 4 -->
         <div class="single-review-card">
           <div class="review-top">
             <div class="reviewer-badge-info">
-              <span class="avatar-circle">PR</span>
+              <span class="avatar-circle">GS</span>
               <div>
-                <strong class="reviewer-name">Priyanka Roy</strong>
-                <span class="reviewer-city">Kolkata</span>
+                <strong class="reviewer-name">Gurpreet Singh</strong>
+                <span class="reviewer-city">Ludhiana, Punjab</span>
               </div>
             </div>
             <span class="verified-purchase-pill">✓ Verified Purchase</span>
           </div>
           <div class="stars-gold">★★★★★</div>
-          <p class="review-comment" data-en="This is my second box order! The natural softness and firmness improved step by step without any harm. The delivery package was completely private. 100% genuine product!" data-hi="यह मेरा दूसरा डिब्बा है! धीरे-धीरे बिना किसी परेशानी के बहुत ही नेचुरल और बढ़िया रिस्पॉन्स मिला। डिलीवरी पार्सल भी पूरी तरह से गुप्त रखा गया था। 100% असली प्रोडक्ट!">
-            This is my second box order! The natural softness and firmness improved step by step without any harm. The delivery package was completely private. 100% genuine product!
+          <p class="review-comment" data-en="Genuine Ayurvedic formulation. You can genuinely feel the benefit of authentic Shilajit and Ashwagandha. My energy stays high from morning till night. Fast delivery and polite customer support. Highly recommended for all men." data-hi="असली और शुद्ध आयुर्वेदिक उत्पाद है। शुद्ध शिलाजीत और अश्वगंधा का प्रभाव साफ महसूस होता है। सुबह से लेकर रात तक ऊर्जा बनी रहती है। समय पर डिलीवरी और बहुत बढ़िया कस्टमर सपोर्ट। सभी भाइयों को सलाह दूंगा!">
+            Genuine Ayurvedic formulation. You can genuinely feel the benefit of authentic Shilajit and Ashwagandha. My energy stays high from morning till night. Fast delivery and polite customer support. Highly recommended for all men.
           </p>
-          <span class="review-date">Reviewed 2 weeks ago</span>
+          <div class="review-footer-info">
+            <span class="review-product-tag">Purchased: Testosterone Plus Powder</span>
+            <span class="review-date">Reviewed 2 weeks ago</span>
+          </div>
         </div>
 
       </div>
@@ -312,8 +440,8 @@
       <!-- Quick Scroll to Top Order Button -->
       <div class="bottom-order-trigger">
         <button class="scroll-up-order-btn" onclick="scrollToTopForm()">
-          <span data-en="↑ ORDER NOW (CASH ON DELIVERY - ₹1,999)" data-hi="↑ अभी आर्डर करें (कैश ऑन डिलीवरी - ₹1,999)">
-            ↑ ORDER NOW (CASH ON DELIVERY - ₹1,999)
+          <span id="bottomBtnText" data-en="↑ ORDER NOW (CASH ON DELIVERY - ₹1,499)" data-hi="↑ अभी आर्डर करें (कैश ऑन डिलीवरी - ₹1,499)">
+            ↑ ORDER NOW (CASH ON DELIVERY - ₹1,499)
           </span>
         </button>
       </div>
@@ -321,7 +449,7 @@
     </section>
 
     <footer class="app-footer">
-      <p>© 2026 Warecare Herbal. 100% Ayurvedic Care & Discreet Delivery.</p>
+      <p>© 2026 Wellness Herbal. 100% Ayurvedic Care & Discreet Pan-India Delivery.</p>
     </footer>
 
   </div>
@@ -339,18 +467,18 @@
       <h3 class="modal-h3" data-en="Your Order is Registered! 🎉" data-hi="आपका आर्डर बुक हो गया है! 🎉">
         Your Order is Registered! 🎉
       </h3>
-      <p class="modal-desc" data-en="Thank you for choosing Warecare Herbal. Our team will contact you shortly on your number to confirm delivery." data-hi="वेयरकेयर चुनने के लिए धन्यवाद। हमारी टीम जल्द ही आपसे संपर्क करके आर्डर कन्फर्म करेगी।">
-        Thank you for choosing Warecare Herbal. Our team will contact you shortly on your number to confirm delivery.
+      <p class="modal-desc" data-en="Thank you for choosing Wellness Herbal. Our senior doctor will contact you shortly to confirm your discreet delivery." data-hi="वेलनेस हर्बल चुनने के लिए धन्यवाद। हमारे वरिष्ठ डॉक्टर जल्द ही आपसे संपर्क करके पार्सल कन्फर्म करेंगे।">
+        Thank you for choosing Wellness Herbal. Our senior doctor will contact you shortly to confirm your discreet delivery.
       </p>
 
       <div class="modal-receipt">
         <div class="rec-line">
           <span class="rec-label" data-en="Order ID:" data-hi="आर्डर नंबर:">Order ID:</span>
-          <strong class="rec-id-val" id="receiptOrderId">#WC-89104</strong>
+          <strong class="rec-id-val" id="receiptOrderId">#WH-89104</strong>
         </div>
         <div class="rec-line">
           <span class="rec-label" data-en="Product:" data-hi="प्रोडक्ट:">Product:</span>
-          <span>Warecare Curvy Bust Powder (200g)</span>
+          <strong id="receiptProduct" class="rec-prod-name">Testosterone Plus Powder (200g)</strong>
         </div>
         <div class="rec-line">
           <span class="rec-label" data-en="Customer:" data-hi="ग्राहक का नाम:">Customer:</span>
@@ -366,12 +494,12 @@
         </div>
         <div class="rec-line rec-total">
           <span data-en="Amount Payable at Delivery:" data-hi="डिलीवरी पर देय राशि:">Amount Payable at Delivery:</span>
-          <strong class="rec-amount">₹1,999 (COD)</strong>
+          <strong class="rec-amount" id="receiptAmount">₹1,499 (COD)</strong>
         </div>
       </div>
 
       <div class="team-contact-notice">
-        👨‍⚕️ <span data-en="Our specialist doctor will call you to explain dosage." data-hi="हमारे डॉक्टर आपको खुराक समझाने के लिए कॉल करेंगे।">Our specialist doctor will call you to explain dosage.</span>
+        👨‍⚕️ <span data-en="Our specialist doctor will call you to guide dosage & routine." data-hi="हमारे डॉक्टर आपको खुराक व सही सेवन समझाने के लिए कॉल करेंगे।">Our specialist doctor will call you to guide dosage & routine.</span>
       </div>
 
       <div class="modal-btn-stack">

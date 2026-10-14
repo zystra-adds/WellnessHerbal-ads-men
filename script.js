@@ -1,14 +1,123 @@
 // ==========================================================
-// WARECARE HERBAL - SINGLE FRAME CONTROLLER SCRIPT
+// WELLNESS HERBAL - MEN'S VITALITY CONTROLLER SCRIPT
 // ==========================================================
 
 // Google Apps Script Web App URL for Google Sheets
 let GOOGLE_SHEET_APP_URL = "https://script.google.com/macros/s/AKfycbxx6LYcRqZrNB5MLJCqYrXf4oTc6s4fiW40Rkn8yQCp9hmAQCXLuGZnYkTZSaewC4KuWA/exec";
 
+// Product Data Configuration
+const PRODUCTS_DATA = {
+  powder: {
+    id: "powder",
+    nameEn: "Testosterone Plus Powder (200g)",
+    nameHi: "टेस्टोस्टेरोन प्लस पाउडर (200g)",
+    tag: "🦁 LION FORMULA",
+    image: "images/testosterone_plus_powder.png",
+    priceVal: "1,499",
+    priceNum: 1499,
+    mrp: "₹2,499",
+    saveEn: "SAVE ₹1,000 (40% OFF)",
+    saveHi: "₹1,000 छूट (40% OFF)"
+  },
+  spray: {
+    id: "spray",
+    nameEn: "Steel Man Gold Oil Spray (50ml)",
+    nameHi: "स्टील मैन गोल्ड ऑयल स्प्रे (50ml)",
+    tag: "⚡ VITALITY SPRAY",
+    image: "images/steelman_gold_spray.png",
+    priceVal: "999",
+    priceNum: 999,
+    mrp: "₹1,699",
+    saveEn: "SAVE ₹700 (41% OFF)",
+    saveHi: "₹700 छूट (41% OFF)"
+  },
+  combo: {
+    id: "combo",
+    nameEn: "Full Power Combo (Powder 200g + Oil Spray 50ml)",
+    nameHi: "फुल पावर कॉम्बो (पाउडर 200g + स्प्रे 50ml)",
+    tag: "👑 MEGA COMBO",
+    image: "images/testosterone_plus_powder.png",
+    priceVal: "2,199",
+    priceNum: 2199,
+    mrp: "₹4,198",
+    saveEn: "SAVE ₹1,999 (48% OFF)",
+    saveHi: "₹1,999 भारी छूट (48% OFF)"
+  }
+};
+
+let currentSelectedProduct = "powder";
+
 document.addEventListener('DOMContentLoaded', () => {
   initTwoMinuteTimer();
   initFormValidation();
+  selectProduct('powder'); // default active
 });
+
+// ==========================================================
+// 1. PRODUCT SELECTION CONTROLLER
+// ==========================================================
+window.selectProduct = function(productId) {
+  const prod = PRODUCTS_DATA[productId];
+  if (!prod) return;
+
+  currentSelectedProduct = productId;
+
+  // 1. Update selector cards active state
+  document.querySelectorAll('.product-opt-card').forEach(card => {
+    if (card.getAttribute('data-product-id') === productId) {
+      card.classList.add('active');
+    } else {
+      card.classList.remove('active');
+    }
+  });
+
+  // 2. Update active showcase image & tag
+  const imgEl = document.getElementById('activeProductImg');
+  const tagEl = document.getElementById('activeProductTag');
+  if (imgEl) {
+    imgEl.src = prod.image;
+    imgEl.alt = prod.nameEn;
+  }
+  if (tagEl) {
+    tagEl.textContent = prod.tag;
+  }
+
+  // 3. Update Name & Pricing
+  const nameEl = document.getElementById('activeProductName');
+  const mrpEl = document.getElementById('activeMrp');
+  const priceValEl = document.getElementById('activePriceVal');
+  const saveTagEl = document.getElementById('activeSaveTag');
+  const btnPayAmount = document.getElementById('btnPayAmount');
+  const bottomBtnText = document.getElementById('bottomBtnText');
+
+  if (nameEl) {
+    nameEl.setAttribute('data-en', prod.nameEn);
+    nameEl.setAttribute('data-hi', prod.nameHi);
+    const isHi = document.body.classList.contains('lang-hi');
+    nameEl.textContent = isHi ? prod.nameHi : prod.nameEn;
+  }
+
+  if (mrpEl) mrpEl.textContent = prod.mrp;
+  if (priceValEl) priceValEl.textContent = prod.priceVal;
+
+  if (saveTagEl) {
+    saveTagEl.setAttribute('data-en', prod.saveEn);
+    saveTagEl.setAttribute('data-hi', prod.saveHi);
+    const isHi = document.body.classList.contains('lang-hi');
+    saveTagEl.textContent = isHi ? prod.saveHi : prod.saveEn;
+  }
+
+  if (btnPayAmount) {
+    btnPayAmount.textContent = `₹${prod.priceVal}`;
+  }
+
+  if (bottomBtnText) {
+    bottomBtnText.setAttribute('data-en', `↑ ORDER NOW (CASH ON DELIVERY - ₹${prod.priceVal})`);
+    bottomBtnText.setAttribute('data-hi', `↑ अभी आर्डर करें (कैश ऑन डिलीवरी - ₹${prod.priceVal})`);
+    const isHi = document.body.classList.contains('lang-hi');
+    bottomBtnText.textContent = isHi ? `↑ अभी आर्डर करें (कैश ऑन डिलीवरी - ₹${prod.priceVal})` : `↑ ORDER NOW (CASH ON DELIVERY - ₹${prod.priceVal})`;
+  }
+};
 
 window.scrollToTopForm = function() {
   const formEl = document.getElementById('compactOrderForm');
@@ -20,7 +129,7 @@ window.scrollToTopForm = function() {
 };
 
 // ==========================================================
-// 1. 2-MINUTE COUNTDOWN TIMER (02:00 -> 00:00)
+// 2. 2-MINUTE COUNTDOWN TIMER (02:00 -> 00:00)
 // ==========================================================
 function initTwoMinuteTimer() {
   let totalSeconds = 120; // 2 minutes
@@ -43,7 +152,7 @@ function initTwoMinuteTimer() {
 }
 
 // ==========================================================
-// 2. LANGUAGE SWITCHER (Dual, Hindi, English)
+// 3. LANGUAGE SWITCHER (Dual, Hindi, English)
 // ==========================================================
 window.setLanguage = function(lang) {
   const body = document.body;
@@ -55,10 +164,13 @@ window.setLanguage = function(lang) {
 
   body.classList.remove('lang-dual', 'lang-hi', 'lang-en');
   body.classList.add(`lang-${lang}`);
+
+  // Re-sync dynamic texts
+  selectProduct(currentSelectedProduct);
 };
 
 // ==========================================================
-// 3. COMPACT FORM VALIDATION & GOOGLE SHEET SUBMIT
+// 4. COMPACT FORM VALIDATION & SUBMISSION
 // ==========================================================
 function initFormValidation() {
   const form = document.getElementById('compactOrderForm');
@@ -111,7 +223,7 @@ function initFormValidation() {
   // Address Validation
   addressInput.addEventListener('input', () => {
     const parent = addressInput.closest('.input-cell');
-    if (addressInput.value.trim().length >= 6) {
+    if (addressInput.value.trim().length >= 5) {
       parent.classList.add('valid');
       parent.classList.remove('has-error');
     } else {
@@ -148,11 +260,15 @@ function initFormValidation() {
         submitBtn.querySelector('.btn-main-title').textContent = '⏳ REGISTERING ORDER...';
       }
 
+      const selectedProdObj = PRODUCTS_DATA[currentSelectedProduct];
+
       const orderData = {
         name: nameInput.value.trim(),
         phone: phoneInput.value.trim(),
         pincode: pincodeInput.value.trim(),
-        address: addressInput.value.trim()
+        address: addressInput.value.trim(),
+        product: selectedProdObj.nameEn,
+        amount: `₹${selectedProdObj.priceVal} (COD)`
       };
 
       openSuccessModal(orderData);
@@ -180,7 +296,6 @@ function submitToGoogleSheet(data) {
   if (!GOOGLE_SHEET_APP_URL) return;
   const payloadStr = JSON.stringify(data);
 
-  // Method 1: Standard Fetch with text/plain (avoids CORS preflight)
   try {
     fetch(GOOGLE_SHEET_APP_URL, {
       method: "POST",
@@ -194,7 +309,6 @@ function submitToGoogleSheet(data) {
     console.log("Fetch error:", e);
   }
 
-  // Method 2: Fallback Beacon
   try {
     if (navigator.sendBeacon) {
       const blob = new Blob([payloadStr], { type: 'text/plain;charset=utf-8' });
@@ -206,43 +320,48 @@ function submitToGoogleSheet(data) {
 }
 
 // ==========================================================
-// 4. ORDER CONFIRMATION MODAL & WHATSAPP
+// 5. ORDER CONFIRMATION MODAL & WHATSAPP
 // ==========================================================
 function openSuccessModal(data) {
   const modal = document.getElementById('orderSuccessModal');
   const idEl = document.getElementById('receiptOrderId');
+  const prodEl = document.getElementById('receiptProduct');
   const nameEl = document.getElementById('receiptName');
   const phoneEl = document.getElementById('receiptPhone');
   const addressEl = document.getElementById('receiptAddress');
+  const amountEl = document.getElementById('receiptAmount');
   const waBtn = document.getElementById('whatsappConfirmLink');
 
-  const randomId = 'WC-' + Math.floor(10000 + Math.random() * 90000);
+  const randomId = 'WH-' + Math.floor(10000 + Math.random() * 90000);
 
   if (idEl) idEl.textContent = `#${randomId}`;
+  if (prodEl) prodEl.textContent = data.product;
   if (nameEl) nameEl.textContent = data.name;
   if (phoneEl) phoneEl.textContent = `+91 ${data.phone}`;
   if (addressEl) addressEl.textContent = `${data.address}, PIN: ${data.pincode}`;
+  if (amountEl) amountEl.textContent = data.amount;
 
   // Submit to Google Sheets in background
   submitToGoogleSheet({
     orderId: `#${randomId}`,
+    product: data.product,
     name: data.name,
     phone: data.phone,
     pincode: data.pincode,
     address: data.address,
-    amount: "₹1,999 (COD)",
+    amount: data.amount,
     timestamp: new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })
   });
 
   const waText = encodeURIComponent(
-    `Hello Warecare Herbal, I booked my order!\n\n` +
+    `Hello Wellness Herbal, I placed my order!\n\n` +
     `*Order ID:* #${randomId}\n` +
-    `*Item:* Curvy Bust Powder (200g)\n` +
-    `*Amount:* ₹1,999 (Cash on Delivery)\n` +
+    `*Product:* ${data.product}\n` +
+    `*Amount:* ${data.amount}\n` +
     `*Name:* ${data.name}\n` +
     `*Phone:* +91 ${data.phone}\n` +
     `*Address:* ${data.address}, PIN: ${data.pincode}\n\n` +
-    `Our expert doctor will contact you soon. Thank you!`
+    `Please confirm dispatch in discreet packaging. Thank you!`
   );
 
   if (waBtn) {
