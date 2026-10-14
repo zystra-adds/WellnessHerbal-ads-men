@@ -1,41 +1,42 @@
 /* ==========================================================
    WELLNESS HERBAL - MEN'S AYURVEDIC VITALITY & PERFORMANCE
-   LUXURY GOLD & OBSIDIAN THEME (NO PINK)
+   PREMIUM LIGHT LUXURY GOLD & HERBAL THEME (NO PINK, NO DARK BG)
    ========================================================== */
 
 :root {
-  /* Royal Gold & Amber Palettes */
-  --gold-primary: #d4af37;
-  --gold-bright: #f59e0b;
-  --gold-light: #fef08a;
-  --gold-deep: #b45309;
-  --gold-glow: rgba(212, 175, 55, 0.35);
+  /* Royal Gold & Amber Accents */
+  --gold-primary: #d97706;
+  --gold-dark: #b45309;
+  --gold-deep: #92400e;
+  --gold-light: #fef3c7;
+  --gold-border: rgba(217, 119, 6, 0.35);
 
-  /* Deep Masculine Obsidian & Rich Slate */
-  --bg-dark: #0d1117;
-  --bg-card: #161b22;
-  --bg-card-subtle: #1c2128;
-  --bg-input: #0f141c;
-  --border-gold: rgba(212, 175, 55, 0.28);
-  --border-gold-active: #d4af37;
-  --border-subtle: rgba(255, 255, 255, 0.1);
+  /* Light Theme Surfaces */
+  --bg-page: #f4f6f9;
+  --bg-gradient: radial-gradient(circle at 50% 0%, #ffffff 0%, #f1f5f9 60%, #e2e8f0 100%);
+  --bg-card: #ffffff;
+  --bg-card-subtle: #f8fafc;
+  --bg-input: #ffffff;
+  --border-light: #e2e8f0;
+  --border-card: #cbd5e1;
+  --border-focus: #d97706;
 
   /* Herbal Green Accents */
-  --ayur-green: #10b981;
+  --ayur-green: #059669;
   --ayur-green-dark: #064e3b;
-  --ayur-green-bg: rgba(16, 185, 129, 0.12);
-  --ayur-green-border: rgba(16, 185, 129, 0.3);
+  --ayur-green-bg: #ecfdf5;
+  --ayur-green-border: #a7f3d0;
 
   /* Royal Maroon / Burgundy Accent */
-  --royal-maroon: #7f1d1d;
-  --royal-maroon-light: #991b1b;
-  --royal-maroon-bg: rgba(127, 29, 29, 0.2);
+  --royal-maroon: #881337;
+  --royal-maroon-bg: #fff1f2;
 
-  /* Text Colors */
-  --text-pure: #ffffff;
-  --text-main: #f3f4f6;
-  --text-muted: #9ca3af;
-  --text-gold: #fbbf24;
+  /* High Contrast Dark Typography */
+  --text-pure: #0f172a;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --text-light: #94a3b8;
+  --text-gold: #b45309;
 
   /* Fonts */
   --font-heading: 'Playfair Display', Georgia, serif;
@@ -46,9 +47,12 @@
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 16px;
-  --radius-xl: 22px;
+  --radius-xl: 20px;
   --radius-full: 9999px;
-  --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
 * {
@@ -63,7 +67,7 @@ html {
 
 body {
   font-family: var(--font-body);
-  background: radial-gradient(circle at 50% 0%, #1e2530 0%, #0d1117 60%, #080a0e 100%);
+  background: var(--bg-gradient);
   background-attachment: fixed;
   color: var(--text-main);
   min-height: 100vh;
@@ -80,7 +84,7 @@ body {
 body.lang-en [data-hi] { display: none !important; }
 body.lang-hi [data-en] { display: none !important; }
 body.lang-dual .label-en { display: inline; }
-body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size: 0.85em; font-family: var(--font-hindi); }
+body.lang-dual .label-hi { display: inline; color: var(--gold-dark); font-size: 0.85em; font-family: var(--font-hindi); }
 
 .app-viewport-container {
   width: 100%;
@@ -98,12 +102,12 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(22, 27, 34, 0.92);
-  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(10px);
   padding: 8px 14px;
   border-radius: var(--radius-full);
-  border: 1px solid var(--border-gold);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(212, 175, 55, 0.1);
+  border: 1px solid var(--border-light);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
   position: sticky;
   top: 6px;
   z-index: 50;
@@ -117,15 +121,14 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
 
 .brand-icon {
   font-size: 1.25rem;
-  filter: drop-shadow(0 0 6px rgba(245, 158, 11, 0.6));
 }
 
 .brand-titles strong {
   display: block;
   font-size: 0.86rem;
   font-weight: 900;
-  letter-spacing: 0.7px;
-  color: var(--gold-bright);
+  letter-spacing: 0.6px;
+  color: var(--gold-dark);
   line-height: 1.1;
   text-transform: uppercase;
 }
@@ -134,21 +137,20 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
   display: block;
   font-size: 0.58rem;
   font-weight: 700;
-  color: #94a3b8;
-  letter-spacing: 0.6px;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
 }
 
 .compact-timer-badge {
   display: flex;
   align-items: center;
   gap: 4px;
-  background: linear-gradient(135deg, #7f1d1d 0%, #b45309 100%);
+  background: linear-gradient(135deg, #b91c1c 0%, #c2410c 100%);
   color: #ffffff;
   padding: 4px 10px;
   border-radius: var(--radius-full);
   font-size: 0.72rem;
-  box-shadow: 0 2px 8px rgba(180, 83, 9, 0.4);
-  border: 1px solid rgba(245, 158, 11, 0.3);
+  box-shadow: 0 2px 8px rgba(185, 28, 28, 0.25);
 }
 
 .compact-timer-badge strong {
@@ -161,10 +163,10 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
 .lang-switcher {
   display: flex;
   gap: 2px;
-  background: #0d1117;
+  background: #f1f5f9;
   padding: 3px;
   border-radius: var(--radius-full);
-  border: 1px solid var(--border-subtle);
+  border: 1px solid var(--border-light);
 }
 
 .lang-btn {
@@ -181,9 +183,9 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
 }
 
 .lang-btn.active {
-  background: var(--gold-bright);
-  color: #0d1117;
-  box-shadow: 0 1px 6px rgba(245, 158, 11, 0.4);
+  background: var(--gold-dark);
+  color: #ffffff;
+  box-shadow: 0 1px 4px rgba(180, 83, 9, 0.3);
 }
 
 /* ==========================================================
@@ -192,16 +194,16 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
 .single-frame-card {
   background: var(--bg-card);
   border-radius: var(--radius-xl);
-  border: 1.5px solid var(--border-gold);
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6), 0 0 24px rgba(212, 175, 55, 0.12);
+  border: 1.5px solid rgba(217, 119, 6, 0.25);
+  box-shadow: var(--shadow-lg);
   overflow: hidden;
   position: relative;
 }
 
 /* 1. DOCTOR GUIDANCE & PRIVACY BANNER */
 .doctor-contact-banner {
-  background: linear-gradient(180deg, #11271f 0%, #0d1e18 100%);
-  padding: 9px 14px;
+  background: linear-gradient(180deg, #f0fdf4 0%, #ecfdf5 100%);
+  padding: 10px 14px;
   border-bottom: 1px solid var(--ayur-green-border);
   text-align: center;
   display: flex;
@@ -214,7 +216,7 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
   align-items: center;
   justify-content: center;
   gap: 6px;
-  color: #34d399;
+  color: #065f46;
   font-size: 0.84rem;
   font-weight: 800;
 }
@@ -224,7 +226,7 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
   align-items: center;
   justify-content: center;
   gap: 5px;
-  color: #a7f3d0;
+  color: #047857;
   font-size: 0.72rem;
   font-weight: 600;
 }
@@ -235,8 +237,8 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
   justify-content: center;
   gap: 8px;
   padding: 9px 12px;
-  background: rgba(13, 17, 23, 0.6);
-  border-bottom: 1px solid var(--border-subtle);
+  background: #ffffff;
+  border-bottom: 1px solid var(--border-light);
   flex-wrap: wrap;
 }
 
@@ -251,30 +253,30 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
 }
 
 .pill-ayurvedic {
-  background: var(--ayur-green-bg);
-  color: #34d399;
-  border: 1px solid var(--ayur-green-border);
+  background: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
 }
 
 .pill-safety {
-  background: rgba(245, 158, 11, 0.12);
-  color: var(--gold-bright);
-  border: 1px solid rgba(245, 158, 11, 0.28);
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fde68a;
 }
 
 .pill-cod {
-  background: rgba(59, 130, 246, 0.12);
-  color: #60a5fa;
-  border: 1px solid rgba(59, 130, 246, 0.28);
+  background: #eff6ff;
+  color: #1e40af;
+  border: 1px solid #bfdbfe;
 }
 
 /* ==========================================================
    PRODUCT SELECTOR SECTION
    ========================================================== */
 .product-selector-wrapper {
-  padding: 14px 14px 10px;
-  background: #12171f;
-  border-bottom: 1px solid var(--border-subtle);
+  padding: 14px;
+  background: #f8fafc;
+  border-bottom: 1px solid var(--border-light);
 }
 
 .selector-heading {
@@ -284,7 +286,7 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.5px;
-  color: var(--gold-bright);
+  color: var(--gold-dark);
   margin-bottom: 10px;
   text-transform: uppercase;
 }
@@ -300,31 +302,32 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
   display: flex;
   align-items: center;
   gap: 12px;
-  background: var(--bg-card-subtle);
-  border: 1.5px solid var(--border-subtle);
+  background: #ffffff;
+  border: 1.5px solid var(--border-light);
   border-radius: var(--radius-md);
   padding: 10px 12px;
   cursor: pointer;
   transition: var(--transition);
+  box-shadow: var(--shadow-sm);
 }
 
 .product-opt-card:hover {
-  border-color: rgba(212, 175, 55, 0.5);
-  background: #212833;
+  border-color: rgba(217, 119, 6, 0.45);
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.08);
 }
 
 .product-opt-card.active {
-  border-color: var(--gold-bright);
-  background: linear-gradient(135deg, rgba(212, 175, 55, 0.12) 0%, rgba(22, 27, 34, 0.95) 100%);
-  box-shadow: 0 0 16px rgba(245, 158, 11, 0.2);
+  border-color: var(--gold-primary);
+  background: linear-gradient(135deg, #fffdf7 0%, #ffffff 100%);
+  box-shadow: 0 0 0 1px var(--gold-primary), 0 4px 16px rgba(217, 119, 6, 0.12);
 }
 
 .opt-badge {
   position: absolute;
   top: -8px;
   right: 12px;
-  background: #374151;
-  color: #f3f4f6;
+  background: #64748b;
+  color: #ffffff;
   font-size: 0.6rem;
   font-weight: 800;
   padding: 2px 7px;
@@ -333,20 +336,20 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
 }
 
 .opt-badge.best-seller {
-  background: linear-gradient(135deg, #b45309 0%, #f59e0b 100%);
-  color: #000;
+  background: linear-gradient(135deg, #b45309 0%, #d97706 100%);
+  color: #ffffff;
 }
 
 .opt-badge.mega-save {
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-  color: #fff;
+  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+  color: #ffffff;
 }
 
 .opt-radio {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  border: 2px solid #6b7280;
+  border: 2px solid #cbd5e1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -355,7 +358,7 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
 }
 
 .product-opt-card.active .opt-radio {
-  border-color: var(--gold-bright);
+  border-color: var(--gold-primary);
 }
 
 .radio-circle {
@@ -367,16 +370,15 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
 }
 
 .product-opt-card.active .radio-circle {
-  background: var(--gold-bright);
-  box-shadow: 0 0 8px var(--gold-bright);
+  background: var(--gold-primary);
 }
 
 .opt-img-wrap {
   width: 52px;
   height: 52px;
   border-radius: var(--radius-sm);
-  background: #0d1117;
-  border: 1px solid var(--border-subtle);
+  background: #f1f5f9;
+  border: 1px solid var(--border-light);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -424,7 +426,7 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
 }
 
 .product-opt-card.active .opt-name {
-  color: var(--gold-bright);
+  color: var(--gold-deep);
 }
 
 .opt-weight {
@@ -442,27 +444,29 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
 .opt-curr-price {
   font-size: 1.05rem;
   font-weight: 900;
-  color: #fef08a;
+  color: var(--gold-deep);
 }
 
 .opt-mrp {
   font-size: 0.76rem;
-  color: #6b7280;
+  color: #94a3b8;
   text-decoration: line-through;
 }
 
 .opt-save-badge {
   font-size: 0.64rem;
   font-weight: 800;
-  color: #34d399;
-  background: var(--ayur-green-bg);
+  color: #065f46;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
   padding: 1px 6px;
   border-radius: var(--radius-full);
 }
 
 .opt-save-badge.gold-save {
-  color: #fbbf24;
-  background: rgba(245, 158, 11, 0.15);
+  color: #92400e;
+  background: #fef3c7;
+  border-color: #fde68a;
 }
 
 /* ==========================================================
@@ -473,16 +477,16 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
   align-items: center;
   gap: 14px;
   padding: 14px;
-  background: linear-gradient(135deg, #18202c 0%, #10141c 100%);
-  border-bottom: 1px solid var(--border-gold);
+  background: #ffffff;
+  border-bottom: 1px solid var(--border-light);
 }
 
 .product-mini-thumb {
   width: 90px;
   height: 90px;
-  background: radial-gradient(circle, #252e3d 0%, #0d1117 80%);
+  background: radial-gradient(circle, #f8fafc 0%, #eef2f6 80%);
   border-radius: var(--radius-md);
-  border: 1.5px solid var(--border-gold);
+  border: 1.5px solid rgba(217, 119, 6, 0.3);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -490,7 +494,7 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
   position: relative;
   flex-shrink: 0;
   padding: 4px;
-  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.6);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.03);
 }
 
 .thumb-img {
@@ -503,14 +507,15 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
 .active-tag-pill {
   position: absolute;
   bottom: -6px;
-  background: linear-gradient(135deg, #b45309 0%, #d4af37 100%);
-  color: #000;
+  background: linear-gradient(135deg, #b45309 0%, #d97706 100%);
+  color: #ffffff;
   font-size: 0.54rem;
   font-weight: 900;
-  padding: 1px 6px;
+  padding: 2px 7px;
   border-radius: var(--radius-full);
   white-space: nowrap;
   letter-spacing: 0.4px;
+  box-shadow: 0 2px 6px rgba(180, 83, 9, 0.25);
 }
 
 .product-mini-info {
@@ -537,11 +542,11 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
 .delivery-all-india {
   font-size: 0.65rem;
   font-weight: 700;
-  color: #34d399;
-  background: var(--ayur-green-bg);
+  color: #065f46;
+  background: #ecfdf5;
   padding: 2px 7px;
   border-radius: var(--radius-full);
-  border: 1px solid var(--ayur-green-border);
+  border: 1px solid #a7f3d0;
   white-space: nowrap;
 }
 
@@ -554,11 +559,11 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
 .usp-badge {
   font-size: 0.64rem;
   font-weight: 700;
-  background: rgba(255, 255, 255, 0.06);
-  color: #e5e7eb;
+  background: #f1f5f9;
+  color: #334155;
   padding: 2px 6px;
   border-radius: var(--radius-sm);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid #e2e8f0;
 }
 
 /* Pulsing Zoom-in Zoom-out Price Box */
@@ -577,44 +582,44 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
 
 .mrp-old {
   font-size: 0.85rem;
-  color: #9ca3af;
+  color: #94a3b8;
   text-decoration: line-through;
 }
 
 .price-pulse-target {
   display: inline-flex;
   align-items: baseline;
-  animation: pulseZoom 2s ease-in-out infinite;
+  animation: pulseZoomLight 2s ease-in-out infinite;
   transform-origin: left center;
 }
 
-@keyframes pulseZoom {
-  0% { transform: scale(1); filter: drop-shadow(0 0 2px rgba(245, 158, 11, 0.4)); }
-  50% { transform: scale(1.08); filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.8)); }
-  100% { transform: scale(1); filter: drop-shadow(0 0 2px rgba(245, 158, 11, 0.4)); }
+@keyframes pulseZoomLight {
+  0% { transform: scale(1); filter: drop-shadow(0 0 1px rgba(217, 119, 6, 0.3)); }
+  50% { transform: scale(1.08); filter: drop-shadow(0 0 6px rgba(217, 119, 6, 0.6)); }
+  100% { transform: scale(1); filter: drop-shadow(0 0 1px rgba(217, 119, 6, 0.3)); }
 }
 
 .curr-sign {
   font-size: 1.1rem;
   font-weight: 900;
-  color: var(--gold-bright);
+  color: var(--gold-deep);
 }
 
 .price-val {
   font-size: 1.45rem;
   font-weight: 900;
-  color: #fef08a;
+  color: var(--gold-deep);
   letter-spacing: -0.5px;
 }
 
 .save-tag-badge {
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
   color: #ffffff;
   font-size: 0.68rem;
   font-weight: 800;
   padding: 3px 8px;
   border-radius: var(--radius-full);
-  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+  box-shadow: 0 2px 8px rgba(5, 150, 105, 0.25);
 }
 
 /* ==========================================================
@@ -625,10 +630,10 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background: #11151c;
-  padding: 7px 12px;
-  border-bottom: 1px solid var(--border-subtle);
-  color: var(--gold-bright);
+  background: #f8fafc;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border-light);
+  color: var(--gold-deep);
   font-size: 0.74rem;
   font-weight: 700;
   text-align: center;
@@ -654,7 +659,7 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
   display: flex;
   flex-direction: column;
   gap: 11px;
-  background: var(--bg-card);
+  background: #ffffff;
 }
 
 .form-grid-row {
@@ -673,22 +678,22 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
 .input-cell label {
   font-size: 0.74rem;
   font-weight: 700;
-  color: #d1d5db;
+  color: #334155;
   display: flex;
   align-items: center;
   gap: 2px;
 }
 
 .req {
-  color: #ef4444;
+  color: #dc2626;
   font-weight: 900;
 }
 
 .field-box {
   display: flex;
   align-items: center;
-  background: var(--bg-input);
-  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  background: #f8fafc;
+  border: 1.5px solid var(--border-card);
   border-radius: var(--radius-sm);
   padding: 0 9px;
   height: 42px;
@@ -696,9 +701,9 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
 }
 
 .field-box:focus-within {
-  border-color: var(--gold-bright);
-  box-shadow: 0 0 10px rgba(245, 158, 11, 0.25);
-  background: #151a24;
+  border-color: var(--gold-primary);
+  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.15);
+  background: #ffffff;
 }
 
 .input-icon {
@@ -710,7 +715,7 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
 .ind-prefix {
   font-size: 0.74rem;
   font-weight: 800;
-  color: var(--gold-bright);
+  color: var(--gold-deep);
   margin-right: 6px;
   white-space: nowrap;
 }
@@ -728,12 +733,12 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
 }
 
 .field-box input::placeholder {
-  color: #6b7280;
+  color: #94a3b8;
   font-weight: 400;
 }
 
 .valid-mark {
-  color: #10b981;
+  color: #059669;
   font-size: 0.85rem;
   font-weight: 900;
   display: none;
@@ -744,17 +749,17 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
 }
 
 .input-cell.valid .field-box {
-  border-color: #10b981;
+  border-color: #059669;
 }
 
 .input-cell.has-error .field-box {
-  border-color: #ef4444;
-  box-shadow: 0 0 8px rgba(239, 68, 68, 0.3);
+  border-color: #dc2626;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.12);
 }
 
 .error-msg {
   font-size: 0.65rem;
-  color: #f87171;
+  color: #dc2626;
   display: none;
   margin-top: 1px;
 }
@@ -768,8 +773,8 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(16, 185, 129, 0.1);
-  border: 1px solid rgba(16, 185, 129, 0.28);
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
   padding: 8px 11px;
   border-radius: var(--radius-sm);
   font-size: 0.73rem;
@@ -779,12 +784,12 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
   display: flex;
   align-items: center;
   gap: 6px;
-  color: #34d399;
+  color: #065f46;
 }
 
 .cod-bullet {
-  background: #10b981;
-  color: #000;
+  background: #059669;
+  color: #ffffff;
   width: 15px;
   height: 15px;
   border-radius: 50%;
@@ -796,7 +801,7 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
 }
 
 .all-india-tag {
-  color: var(--gold-light);
+  color: #92400e;
   font-weight: 700;
   font-size: 0.68rem;
 }
@@ -810,18 +815,18 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
   width: 100%;
   border: none;
   border-radius: var(--radius-md);
-  background: linear-gradient(135deg, #10b981 0%, #047857 50%, #065f46 100%);
+  background: linear-gradient(135deg, #059669 0%, #047857 50%, #064e3b 100%);
   color: #ffffff;
   padding: 13px 14px;
   cursor: pointer;
-  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4), 0 0 12px rgba(245, 158, 11, 0.25);
+  box-shadow: 0 6px 20px rgba(5, 150, 105, 0.35);
   transition: var(--transition);
   margin-top: 2px;
 }
 
 .compact-order-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 26px rgba(16, 185, 129, 0.55), 0 0 16px rgba(245, 158, 11, 0.4);
+  box-shadow: 0 8px 24px rgba(5, 150, 105, 0.45);
 }
 
 .compact-order-btn:active {
@@ -856,7 +861,7 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
   font-size: 1rem;
   font-weight: 900;
   letter-spacing: 0.6px;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .btn-sub-detail {
@@ -874,11 +879,11 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
    INGREDIENTS SECTION
    ========================================================== */
 .ingredients-section {
-  background: var(--bg-card);
-  border: 1px solid var(--border-gold);
+  background: #ffffff;
+  border: 1px solid var(--border-light);
   border-radius: var(--radius-lg);
   padding: 16px 14px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--shadow-sm);
 }
 
 .ingredients-title {
@@ -890,8 +895,9 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
   display: inline-block;
   font-size: 0.62rem;
   font-weight: 900;
-  background: rgba(245, 158, 11, 0.15);
-  color: var(--gold-bright);
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fde68a;
   padding: 2px 8px;
   border-radius: var(--radius-full);
   margin-bottom: 4px;
@@ -911,8 +917,8 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
 }
 
 .ing-item {
-  background: #0f141c;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #f8fafc;
+  border: 1px solid var(--border-light);
   border-radius: var(--radius-sm);
   padding: 10px 4px;
   display: flex;
@@ -924,7 +930,8 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
 }
 
 .ing-item:hover {
-  border-color: var(--gold-bright);
+  border-color: var(--gold-primary);
+  background: #fffdf7;
   transform: translateY(-2px);
 }
 
@@ -934,7 +941,7 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
 
 .ing-item strong {
   font-size: 0.72rem;
-  color: var(--gold-bright);
+  color: var(--gold-deep);
   font-weight: 800;
 }
 
@@ -954,11 +961,11 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
 }
 
 .lifestyle-photo-card {
-  background: var(--bg-card);
-  border: 1.5px solid var(--border-gold);
+  background: #ffffff;
+  border: 1px solid var(--border-light);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  box-shadow: var(--shadow-md);
 }
 
 .photo-img-wrap {
@@ -980,34 +987,34 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
   position: absolute;
   top: 12px;
   left: 12px;
-  background: rgba(16, 185, 129, 0.92);
+  background: rgba(5, 150, 105, 0.94);
   backdrop-filter: blur(4px);
   color: #ffffff;
   font-size: 0.72rem;
   font-weight: 800;
   padding: 4px 10px;
   border-radius: var(--radius-full);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .lifestyle-caption {
   padding: 12px 14px;
-  background: #121820;
-  border-top: 1px solid var(--border-subtle);
+  background: #f8fafc;
+  border-top: 1px solid var(--border-light);
   display: flex;
   flex-direction: column;
   gap: 3px;
 }
 
 .lifestyle-caption strong {
-  color: #fef08a;
+  color: var(--gold-deep);
   font-size: 0.88rem;
   font-style: italic;
 }
 
 .lifestyle-caption span {
   font-size: 0.72rem;
-  color: #9ca3af;
+  color: var(--text-muted);
 }
 
 /* Reviews Header */
@@ -1015,10 +1022,11 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: var(--bg-card);
-  border: 1px solid var(--border-gold);
+  background: #ffffff;
+  border: 1px solid var(--border-light);
   border-radius: var(--radius-md);
   padding: 10px 14px;
+  box-shadow: var(--shadow-sm);
 }
 
 .reviews-title-wrap {
@@ -1030,13 +1038,13 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
 .reviews-title-tag {
   font-size: 0.8rem;
   font-weight: 900;
-  color: var(--gold-bright);
+  color: var(--gold-deep);
   letter-spacing: 0.5px;
 }
 
 .reviews-subtitle {
   font-size: 0.65rem;
-  color: #9ca3af;
+  color: var(--text-muted);
 }
 
 .rating-overall {
@@ -1049,19 +1057,19 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
 .rating-score {
   font-size: 1.1rem;
   font-weight: 900;
-  color: #fef08a;
+  color: var(--gold-deep);
   line-height: 1;
 }
 
 .stars-gold {
-  color: #fbbf24;
+  color: #f59e0b;
   letter-spacing: 2px;
   font-size: 0.85rem;
 }
 
 .total-reviews {
   font-size: 0.62rem;
-  color: #9ca3af;
+  color: var(--text-muted);
 }
 
 /* Reviews Cards List */
@@ -1072,24 +1080,26 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
 }
 
 .single-review-card {
-  background: var(--bg-card);
-  border: 1px solid rgba(255, 255, 255, 0.09);
+  background: #ffffff;
+  border: 1px solid var(--border-light);
   border-radius: var(--radius-md);
   padding: 13px;
   display: flex;
   flex-direction: column;
   gap: 7px;
+  box-shadow: var(--shadow-sm);
   transition: var(--transition);
 }
 
 .single-review-card:hover {
-  border-color: rgba(212, 175, 55, 0.35);
+  border-color: rgba(217, 119, 6, 0.4);
   transform: translateY(-1px);
 }
 
 .single-review-card.highlight-review {
-  border-color: var(--gold-bright);
-  background: linear-gradient(135deg, rgba(212, 175, 55, 0.08) 0%, #161b22 100%);
+  border-color: var(--gold-primary);
+  background: linear-gradient(135deg, #fffdf8 0%, #ffffff 100%);
+  box-shadow: 0 4px 16px rgba(217, 119, 6, 0.1);
 }
 
 .review-top {
@@ -1108,8 +1118,8 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #b45309 0%, #d4af37 100%);
-  color: #000;
+  background: linear-gradient(135deg, #b45309 0%, #d97706 100%);
+  color: #ffffff;
   font-size: 0.74rem;
   font-weight: 900;
   display: flex;
@@ -1125,15 +1135,16 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
 
 .reviewer-city {
   font-size: 0.68rem;
-  color: #9ca3af;
+  color: var(--text-muted);
   display: block;
 }
 
 .verified-purchase-pill {
   font-size: 0.64rem;
   font-weight: 800;
-  color: #34d399;
-  background: var(--ayur-green-bg);
+  color: #065f46;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
   padding: 2px 7px;
   border-radius: var(--radius-full);
 }
@@ -1141,7 +1152,7 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
 .review-comment {
   font-size: 0.78rem;
   line-height: 1.5;
-  color: #e5e7eb;
+  color: #334155;
 }
 
 .review-footer-info {
@@ -1149,14 +1160,14 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
   justify-content: space-between;
   align-items: center;
   font-size: 0.64rem;
-  color: #6b7280;
-  border-top: 1px dashed rgba(255, 255, 255, 0.07);
+  color: var(--text-muted);
+  border-top: 1px dashed var(--border-light);
   padding-top: 5px;
 }
 
 .review-product-tag {
-  color: var(--gold-bright);
-  font-weight: 600;
+  color: var(--gold-deep);
+  font-weight: 700;
 }
 
 /* Quick Bottom Order Button */
@@ -1166,8 +1177,8 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
 
 .scroll-up-order-btn {
   width: 100%;
-  background: linear-gradient(135deg, #d4af37 0%, #b45309 100%);
-  color: #0d1117;
+  background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+  color: #ffffff;
   border: none;
   border-radius: var(--radius-md);
   padding: 13px 14px;
@@ -1175,12 +1186,12 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
   font-weight: 900;
   cursor: pointer;
   letter-spacing: 0.5px;
-  box-shadow: 0 4px 18px rgba(212, 175, 55, 0.35);
+  box-shadow: 0 4px 16px rgba(180, 83, 9, 0.3);
   transition: var(--transition);
 }
 
 .scroll-up-order-btn:hover {
-  filter: brightness(1.1);
+  filter: brightness(1.08);
   transform: translateY(-2px);
 }
 
@@ -1188,7 +1199,7 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
 .app-footer {
   text-align: center;
   font-size: 0.68rem;
-  color: #6b7280;
+  color: var(--text-muted);
   padding: 12px 6px;
 }
 
@@ -1198,8 +1209,8 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
 .success-modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(8px);
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(6px);
   display: none;
   align-items: center;
   justify-content: center;
@@ -1218,15 +1229,15 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
 }
 
 .success-dialog-card {
-  background: #161b22;
-  border: 1.5px solid var(--gold-bright);
+  background: #ffffff;
+  border: 1.5px solid var(--gold-primary);
   border-radius: var(--radius-lg);
   width: 100%;
   max-width: 440px;
   padding: 24px 20px;
   position: relative;
   text-align: center;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(212, 175, 55, 0.25);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.2);
   animation: scaleIn 0.3s ease;
 }
 
@@ -1242,7 +1253,7 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
   background: transparent;
   border: none;
   font-size: 1.2rem;
-  color: #9ca3af;
+  color: var(--text-muted);
   cursor: pointer;
 }
 
@@ -1250,25 +1261,25 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
   position: relative;
   width: 60px;
   height: 60px;
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
   border-radius: 50%;
   margin: 0 auto 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.4);
+  box-shadow: 0 4px 16px rgba(5, 150, 105, 0.3);
 }
 
 .check-symbol {
   font-size: 2rem;
-  color: #fff;
+  color: #ffffff;
   font-weight: 900;
 }
 
 .check-ring-pulse {
   position: absolute;
   inset: -6px;
-  border: 2px solid #10b981;
+  border: 2px solid #059669;
   border-radius: 50%;
   animation: ripple 1.8s infinite;
 }
@@ -1281,20 +1292,20 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
 .modal-h3 {
   font-size: 1.25rem;
   font-weight: 900;
-  color: var(--gold-bright);
+  color: var(--gold-deep);
   margin-bottom: 6px;
 }
 
 .modal-desc {
   font-size: 0.78rem;
-  color: #d1d5db;
+  color: var(--text-muted);
   line-height: 1.4;
   margin-bottom: 14px;
 }
 
 .modal-receipt {
-  background: #0f141c;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #f8fafc;
+  border: 1px solid var(--border-light);
   border-radius: var(--radius-md);
   padding: 12px;
   text-align: left;
@@ -1313,35 +1324,35 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
 }
 
 .rec-label {
-  color: #9ca3af;
+  color: var(--text-muted);
   flex-shrink: 0;
 }
 
 .rec-id-val {
-  color: var(--gold-bright);
+  color: var(--gold-deep);
 }
 
 .rec-prod-name {
-  color: #fef08a;
+  color: var(--text-pure);
   text-align: right;
 }
 
 .rec-total {
-  border-top: 1px dashed rgba(255, 255, 255, 0.12);
+  border-top: 1px dashed var(--border-light);
   padding-top: 7px;
   font-weight: 800;
 }
 
 .rec-amount {
-  color: #34d399;
+  color: #059669;
   font-size: 0.92rem;
 }
 
 .team-contact-notice {
   font-size: 0.72rem;
-  color: #a7f3d0;
-  background: rgba(16, 185, 129, 0.12);
-  border: 1px solid var(--ayur-green-border);
+  color: #065f46;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
   padding: 7px 10px;
   border-radius: var(--radius-sm);
   margin-bottom: 14px;
@@ -1355,7 +1366,7 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
 .modal-wa-btn {
   flex: 1;
   background: #25d366;
-  color: #000;
+  color: #ffffff;
   font-size: 0.82rem;
   font-weight: 800;
   text-decoration: none;
@@ -1374,8 +1385,8 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
 
 .modal-ok-btn {
   flex: 1;
-  background: #374151;
-  color: #fff;
+  background: #0f172a;
+  color: #ffffff;
   border: none;
   font-size: 0.82rem;
   font-weight: 800;
@@ -1386,7 +1397,7 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-light); font-size:
 }
 
 .modal-ok-btn:hover {
-  background: #4b5563;
+  background: #1e293b;
 }
 
 /* ==========================================================
