@@ -61,7 +61,7 @@ function doPost(e) {
     var phone = data.phone ? "'" + data.phone : ""; // Leading quote keeps full phone string
     var pincode = data.pincode ? "'" + data.pincode : "";
     var address = data.address || "";
-    var product = data.product || "Power Combo (Powder 200g + Oil Spray 50ml)";
+    var product = data.product || "Complete Power Combo (Testosterone Powder 200g + Steel Man Gold 30 Capsules + Oil Spray 50ml)";
     var amount = data.amount || "₹3,499 (COD)";
     var status = "New Order (Pending Confirmation)";
 

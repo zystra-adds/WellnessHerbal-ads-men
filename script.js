@@ -6,8 +6,33 @@
 let GOOGLE_SHEET_APP_URL = "https://script.google.com/macros/s/AKfycbw3P_MxBgQ2CSHqo_X-931AOOfUuU6wx_tQUCGUYUtM3MfKWb8DsjRErtH_qgFytuqd/exec";
 
 const COMBO_DETAILS = {
-  name: "Power Combo (Testosterone Powder 200g + Oil Spray 50ml)",
+  name: "Complete Power Combo (Testosterone Powder 200g + Steel Man Gold 30 Capsules + Oil Spray 50ml)",
   amount: "₹3,499 (COD)"
+};
+
+const PREVIEW_IMAGES = {
+  kit: "images/power_combo_kit.png",
+  powder: "images/testosterone_plus_powder.png",
+  capsule: "images/steelman_gold_capsule.png",
+  spray: "images/steelman_gold_spray.png"
+};
+
+window.switchComboPreview = function(key) {
+  const imgEl = document.getElementById('activeProductImg');
+  if (imgEl && PREVIEW_IMAGES[key]) {
+    imgEl.style.opacity = '0.3';
+    imgEl.style.transform = 'scale(0.95)';
+    setTimeout(() => {
+      imgEl.src = PREVIEW_IMAGES[key];
+      imgEl.style.opacity = '1';
+      imgEl.style.transform = 'scale(1)';
+    }, 120);
+  }
+
+  // Update active chip state
+  document.querySelectorAll('.preview-item-chip').forEach(btn => btn.classList.remove('active'));
+  const activeChip = document.getElementById(`chip-${key}`);
+  if (activeChip) activeChip.classList.add('active');
 };
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -241,7 +266,7 @@ function openSuccessModal(data) {
   });
 
   const waText = encodeURIComponent(
-    `Hello Wellness Herbal, I placed my order for the Power Combo!\n\n` +
+    `Hello Wellness Herbal, I placed my order for the Complete 3-in-1 Power Combo (Powder + Capsules + Spray)!\n\n` +
     `*Order ID:* #${randomId}\n` +
     `*Item:* ${data.product}\n` +
     `*Amount:* ${data.amount}\n` +

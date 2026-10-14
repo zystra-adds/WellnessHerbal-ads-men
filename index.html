@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wellness Herbal - Complete Men's Vitality Power Combo (Powder + Oil Spray)</title>
+  <title>Wellness Herbal - Complete Men's Vitality 3-in-1 Power Combo (Powder + Capsules + Oil Spray)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&family=Noto+Sans+Devanagari:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -76,16 +76,16 @@
       <!-- Combo Product Showcase Bar -->
       <div class="product-price-compact-bar">
         <div class="product-mini-thumb combo-hero-thumb">
-          <img id="activeProductImg" src="images/power_combo_kit.png" alt="Full Power Combo - Testosterone Plus Powder and Steel Man Gold Spray" class="thumb-img-combo">
-          <span class="active-tag-pill">👑 COMPLETE 2-IN-1 KIT</span>
+          <img id="activeProductImg" src="images/power_combo_kit.png" alt="Complete 3-in-1 Power Combo - Testosterone Plus Powder, Steel Man Gold Capsules and Spray" class="thumb-img-combo">
+          <span class="active-tag-pill">👑 COMPLETE 3-IN-1 KIT</span>
         </div>
 
         <div class="product-mini-info">
           <div class="product-title-row">
             <div>
-              <span class="combo-headline-badge" data-en="POWER COMBO PACK" data-hi="फुल पावर कॉम्बो पैक">POWER COMBO PACK</span>
-              <h1 class="product-name" data-en="Testosterone Plus Powder (200g) + Steel Man Gold Spray (50ml)" data-hi="टेस्टोस्टेरोन प्लस पाउडर (200g) + स्टील मैन गोल्ड स्प्रे (50ml)">
-                Testosterone Plus Powder (200g) + Steel Man Gold Spray (50ml)
+              <span class="combo-headline-badge" data-en="COMPLETE 3-IN-1 POWER COMBO" data-hi="संपूर्ण 3-इन-1 पावर कॉम्बो पैक">COMPLETE 3-IN-1 POWER COMBO</span>
+              <h1 class="product-name" data-en="Testosterone Plus Powder (200g) + Steel Man Gold Capsules (30 Caps) + Spray (50ml)" data-hi="टेस्टोस्टेरोन प्लस पाउडर (200g) + स्टील मैन गोल्ड कैप्सूल (30 कैप्सूल) + ऑयल स्प्रे (50ml)">
+                Testosterone Plus Powder (200g) + Steel Man Gold Capsules (30 Caps) + Spray (50ml)
               </h1>
             </div>
           </div>
@@ -94,6 +94,7 @@
             <span class="usp-badge">⚡ Boosts Energy</span>
             <span class="usp-badge">💪 Supports Vitality</span>
             <span class="usp-badge">🔥 Improves Strength</span>
+            <span class="usp-badge">💊 30 Herbal Capsules</span>
           </div>
 
           <!-- Pulsing Zoom-in Zoom-out Price Highlight -->
@@ -112,37 +113,82 @@
         </div>
       </div>
 
+      <!-- Quick Item Preview Chips -->
+      <div class="combo-items-preview-strip">
+        <span class="preview-strip-label" data-en="3 Items in Kit:" data-hi="किट में 3 उत्पाद शामिल:">3 Items in Kit:</span>
+        <div class="item-chips-scroll">
+          <button type="button" class="preview-item-chip active" onclick="switchComboPreview('kit')" id="chip-kit" title="View Full 3-in-1 Kit">
+            <img src="images/power_combo_kit.png" alt="3-in-1 Kit" class="chip-img">
+            <span>All 3 Items</span>
+          </button>
+          <button type="button" class="preview-item-chip" onclick="switchComboPreview('powder')" id="chip-powder" title="View Powder">
+            <img src="images/testosterone_plus_powder.png" alt="Powder" class="chip-img">
+            <span>Powder 200g</span>
+          </button>
+          <button type="button" class="preview-item-chip" onclick="switchComboPreview('capsule')" id="chip-capsule" title="View Capsule">
+            <img src="images/steelman_gold_capsule.png" alt="Capsules" class="chip-img">
+            <span>Capsules 30s</span>
+          </button>
+          <button type="button" class="preview-item-chip" onclick="switchComboPreview('spray')" id="chip-spray" title="View Spray">
+            <img src="images/steelman_gold_spray.png" alt="Spray" class="chip-img">
+            <span>Spray 50ml</span>
+          </button>
+        </div>
+      </div>
+
       <!-- Combo Usage Guide (Highlighting Separate Usage) -->
       <div class="combo-usage-box">
         <div class="usage-title-strip">
           <span class="usage-dot">💡</span>
-          <strong data-en="HOW TO USE BOTH PRODUCTS (SEPARATELY)" data-hi="दोनों का अलग-अलग इस्तेमाल कैसे करें">HOW TO USE BOTH PRODUCTS (SEPARATELY)</strong>
+          <strong data-en="HOW TO USE ALL 3 PRODUCTS (SEPARATELY)" data-hi="तीनों उत्पादों का अलग-अलग इस्तेमाल कैसे करें">HOW TO USE ALL 3 PRODUCTS (SEPARATELY)</strong>
         </div>
         <div class="usage-steps-grid">
           
-          <div class="usage-step-card">
+          <!-- Step 1: Powder -->
+          <div class="usage-step-card" onclick="switchComboPreview('powder')" title="Click to view Powder">
             <div class="step-num-pill">1</div>
+            <div class="step-thumb-wrap">
+              <img src="images/testosterone_plus_powder.png" alt="Powder" class="step-mini-thumb">
+            </div>
             <div class="step-content">
               <strong class="step-prod-title">Testosterone Plus Powder (200g)</strong>
-              <p class="step-desc" data-en="Drink daily with warm milk — for internal energy, strength & natural hormone support." data-hi="रोजाना हल्के गर्म दूध के साथ पिएं — अंदरूनी ताकत, स्टैमिना और कमजोरी दूर करने के लिए।">
-                Drink daily with warm milk — for internal energy, strength & natural hormone support.
+              <p class="step-desc" data-en="Drink daily with warm milk — builds internal endurance, stamina & natural hormone balance." data-hi="रोजाना रात को हल्के गर्म दूध के साथ पिएं — अंदरूनी ताकत, स्टैमिना और कमजोरी दूर करने के लिए।">
+                Drink daily with warm milk — builds internal endurance, stamina & natural hormone balance.
               </p>
             </div>
           </div>
 
-          <div class="usage-step-card">
+          <!-- Step 2: Capsule -->
+          <div class="usage-step-card" onclick="switchComboPreview('capsule')" title="Click to view Capsules">
             <div class="step-num-pill">2</div>
+            <div class="step-thumb-wrap">
+              <img src="images/steelman_gold_capsule.png" alt="Capsules" class="step-mini-thumb">
+            </div>
+            <div class="step-content">
+              <strong class="step-prod-title">Steel Man Gold Capsules (30 Capsules)</strong>
+              <p class="step-desc" data-en="Take 1 capsule daily after meal with water — active Ayurvedic formula for rapid vitality & stamina." data-hi="रोजाना भोजन के बाद 1 कैप्सूल पानी के साथ लें — शुद्ध हर्बल फॉर्मूला जो जोश, स्टैमिना और शक्ति को तेजी से बढ़ाता है।">
+                Take 1 capsule daily after meal with water — active Ayurvedic formula for rapid vitality & stamina.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 3: Spray -->
+          <div class="usage-step-card" onclick="switchComboPreview('spray')" title="Click to view Spray">
+            <div class="step-num-pill">3</div>
+            <div class="step-thumb-wrap">
+              <img src="images/steelman_gold_spray.png" alt="Spray" class="step-mini-thumb">
+            </div>
             <div class="step-content">
               <strong class="step-prod-title">Steel Man Gold Oil Spray (50ml)</strong>
-              <p class="step-desc" data-en="Use for external massage — fast absorption for instant vigor, vitality & performance." data-hi="बाहरी मालिश के लिए स्प्रे करें — तुरंत सोखकर शक्ति, कसावट और स्फूर्ति बढ़ाने के लिए।">
-                Use for external massage — fast absorption for instant vigor, vitality & performance.
+              <p class="step-desc" data-en="Use for external massage — deep transdermal absorption for local vigor, tone & performance." data-hi="बाहरी मालिश के लिए स्प्रे करें — तुरंत सोखकर शक्ति, कसावट और स्फूर्ति बढ़ाने के लिए।">
+                Use for external massage — deep transdermal absorption for local vigor, tone & performance.
               </p>
             </div>
           </div>
 
         </div>
         <div class="usage-note">
-          ⚠️ <span data-en="Note: Both products are used separately for complete 360° care. Doctor will explain exact routine on call." data-hi="ध्यान दें: दोनों का प्रयोग अलग-अलग होता है (एक पीने के लिए, दूसरा मालिश के लिए)। डॉक्टर कॉल पर पूरा तरीका बताएंगे।">Note: Both products are used separately for complete 360° care. Doctor will explain exact routine on call.</span>
+          ⚠️ <span data-en="Note: All 3 products work together for complete 360° care (Powder & Capsules for internal power, Spray for external care). Doctor will explain exact routine on call." data-hi="ध्यान दें: तीनों उत्पाद मिलकर 360° संपूर्ण शक्ति देते हैं (पाउडर और कैप्सूल अंदरूनी ताकत के लिए, स्प्रे बाहरी मालिश के लिए)। डॉक्टर कॉल पर पूरा तरीका बताएंगे।">Note: All 3 products work together for complete 360° care (Powder & Capsules for internal power, Spray for external care). Doctor will explain exact routine on call.</span>
         </div>
       </div>
 
@@ -296,7 +342,7 @@
           <span class="verified-photo-badge">✓ 100% Real Customer</span>
         </div>
         <div class="lifestyle-caption">
-          <strong>"Dono ko routine me use kiya — 3 hafte me hi jabardast energy aur stamina mehsoos hua!"</strong>
+          <strong>"Teeno ko routine me use kiya — powder doodh ke sath, subah capsule aur spray se massage. 3 hafte me hi jabardast energy aur stamina mehsoos hua!"</strong>
           <span>— Rahul M., Verified Customer (New Delhi)</span>
         </div>
       </div>
@@ -329,11 +375,11 @@
             <span class="verified-purchase-pill">✓ Verified Purchase</span>
           </div>
           <div class="stars-gold">★★★★★</div>
-          <p class="review-comment" data-en="I ordered this Complete Power Combo (Powder + Spray). Best decision! Powder raat ko doodh ke sath pita hu aur spray ko routine me lagata hu. Within 10 to 12 days, I felt a solid surge in vigor, strength, and endurance. Worth every single rupee!" data-hi="मैंने यह पूरा पावर कॉम्बो (पाउडर + ऑयल स्प्रे) मंगाया था। सबसे बढ़िया फ़ैसला रहा! पाउडर को रात में दूध के साथ लेता हूँ और स्प्रे का अलग से प्रयोग करता हूँ। 10-12 दिनों में ही शरीर में शक्ति, स्टैमिना और स्फूर्ति में ज़बरदस्त फ़र्क महसूस हुआ। पैसा वसूल कॉम्बो है!">
-            I ordered this Complete Power Combo (Powder + Spray). Best decision! Powder raat ko doodh ke sath pita hu aur spray ko routine me lagata hu. Within 10 to 12 days, I felt a solid surge in vigor, strength, and endurance. Worth every single rupee!
+          <p class="review-comment" data-en="I ordered this Complete 3-in-1 Power Combo (Powder + Capsules + Spray). Best decision! Powder raat ko doodh ke sath, capsule subah aur spray ko routine me lagata hu. Within 10 to 12 days, I felt a solid surge in vigor, strength, and endurance. Worth every single rupee!" data-hi="मैंने यह पूरा 3-इन-1 पावर कॉम्बो (पाउडर + कैप्सूल + स्प्रे) मंगाया था। सबसे बढ़िया फ़ैसला रहा! पाउडर को रात में दूध के साथ, सुबह कैप्सूल और स्प्रे का अलग से प्रयोग करता हूँ। 10-12 दिनों में ही शरीर में शक्ति, स्टैमिना और स्फूर्ति में ज़बरदस्त फ़र्क महसूस हुआ। पैसा वसूल कॉम्बो है!">
+            I ordered this Complete 3-in-1 Power Combo (Powder + Capsules + Spray). Best decision! Powder raat ko doodh ke sath, capsule subah aur spray ko routine me lagata hu. Within 10 to 12 days, I felt a solid surge in vigor, strength, and endurance. Worth every single rupee!
           </p>
           <div class="review-footer-info">
-            <span class="review-product-tag">Purchased: Full Power Combo Kit</span>
+            <span class="review-product-tag">Purchased: Complete 3-in-1 Power Combo Kit</span>
             <span class="review-date">Reviewed 3 days ago</span>
           </div>
         </div>
@@ -351,11 +397,11 @@
             <span class="verified-purchase-pill">✓ Verified Purchase</span>
           </div>
           <div class="stars-gold">★★★★★</div>
-          <p class="review-comment" data-en="Office fatigue and low stamina were troubling me. Doctor called me right after booking and explained how to use powder with milk and spray separately. In 3 weeks, morning to night energy has completely transformed. 100% Ayurvedic and safe." data-hi="ऑफिस की थकान और कमजोरी से परेशान था। आर्डर के बाद डॉक्टर साहब का कॉल आया और उन्होंने पाउडर व स्प्रे दोनों का अलग-अलग इस्तेमाल अच्छे से समझाया। 3 हफ्ते में सुबह से लेकर रात तक ऊर्जा बनी रहती है। 100% आयुर्वेदिक और सुरक्षित!">
-            Office fatigue and low stamina were troubling me. Doctor called me right after booking and explained how to use powder with milk and spray separately. In 3 weeks, morning to night energy has completely transformed. 100% Ayurvedic and safe.
+          <p class="review-comment" data-en="Office fatigue and low stamina were troubling me. Doctor called me right after booking and explained how to use powder with milk, capsule with water, and spray separately. In 3 weeks, morning to night energy has completely transformed. 100% Ayurvedic and safe." data-hi="ऑफिस की थकान और कमजोरी से परेशान था। आर्डर के बाद डॉक्टर साहब का कॉल आया और उन्होंने पाउडर, कैप्सूल व स्प्रे तीनों का अलग-अलग इस्तेमाल अच्छे से समझाया। 3 हफ्ते में सुबह से लेकर रात तक ऊर्जा बनी रहती है। 100% आयुर्वेदिक और सुरक्षित!">
+            Office fatigue and low stamina were troubling me. Doctor called me right after booking and explained how to use powder with milk, capsule with water, and spray separately. In 3 weeks, morning to night energy has completely transformed. 100% Ayurvedic and safe.
           </p>
           <div class="review-footer-info">
-            <span class="review-product-tag">Purchased: Full Power Combo Kit</span>
+            <span class="review-product-tag">Purchased: Complete 3-in-1 Power Combo Kit</span>
             <span class="review-date">Reviewed 5 days ago</span>
           </div>
         </div>
@@ -373,11 +419,11 @@
             <span class="verified-purchase-pill">✓ Verified Purchase</span>
           </div>
           <div class="stars-gold">★★★★★</div>
-          <p class="review-comment" data-en="The packaging was 100% discreet and confidential, with no product name on the outer box. Delivered in 3 days with Cash on Delivery. Both the powder and spray quality is top-notch." data-hi="पार्सल की पैकिंग पूरी तरह गुप्त और सीलबंद थी, डिब्बे के बाहर प्रोडक्ट का कोई नाम नहीं लिखा था। 3 दिन में कैश ऑन डिलीवरी से पार्सल मिल गया। पाउडर और ऑयल स्प्रे दोनों की क्वालिटी बेहद शानदार है।">
-            The packaging was 100% discreet and confidential, with no product name on the outer box. Delivered in 3 days with Cash on Delivery. Both the powder and spray quality is top-notch.
+          <p class="review-comment" data-en="The packaging was 100% discreet and confidential, with no product name on the outer box. Delivered in 3 days with Cash on Delivery. All 3 items (powder, capsules and spray) are top-notch quality." data-hi="पार्सल की पैकिंग पूरी तरह गुप्त और सीलबंद थी, डिब्बे के बाहर प्रोडक्ट का कोई नाम नहीं लिखा था। 3 दिन में कैश ऑन डिलीवरी से पार्सल मिल गया। तीनों उत्पाद (पाउडर, कैप्सूल और ऑयल स्प्रे) बेहद उच्च गुणवत्ता के हैं।">
+            The packaging was 100% discreet and confidential, with no product name on the outer box. Delivered in 3 days with Cash on Delivery. All 3 items (powder, capsules and spray) are top-notch quality.
           </p>
           <div class="review-footer-info">
-            <span class="review-product-tag">Purchased: Full Power Combo Kit</span>
+            <span class="review-product-tag">Purchased: Complete 3-in-1 Power Combo Kit</span>
             <span class="review-date">Reviewed 1 week ago</span>
           </div>
         </div>
@@ -395,11 +441,11 @@
             <span class="verified-purchase-pill">✓ Verified Purchase</span>
           </div>
           <div class="stars-gold">★★★★★</div>
-          <p class="review-comment" data-en="Genuine Ayurvedic formulation. You can genuinely feel the benefit of authentic Shilajit and Ashwagandha. Both products work hand-in-hand to restore vigor and endurance. Highly recommended for all men." data-hi="असली और शुद्ध आयुर्वेदिक उत्पाद है। शुद्ध शिलाजीत और अश्वगंधा का प्रभाव साफ महसूस होता है। दोनों उत्पाद मिलकर अंदरूनी और बाहरी ताकत को बहाल करते हैं। सभी भाइयों को सलाह दूंगा!">
-            Genuine Ayurvedic formulation. You can genuinely feel the benefit of authentic Shilajit and Ashwagandha. Both products work hand-in-hand to restore vigor and endurance. Highly recommended for all men.
+          <p class="review-comment" data-en="Genuine Ayurvedic formulation. You can genuinely feel the benefit of authentic Shilajit and Ashwagandha. All 3 products work hand-in-hand to restore vigor and endurance. Highly recommended for all men." data-hi="असली और शुद्ध आयुर्वेदिक उत्पाद है। शुद्ध शिलाजीत और अश्वगंधा का प्रभाव साफ महसूस होता है। तीनों उत्पाद मिलकर अंदरूनी और बाहरी ताकत को बहाल करते हैं। सभी भाइयों को सलाह दूंगा!">
+            Genuine Ayurvedic formulation. You can genuinely feel the benefit of authentic Shilajit and Ashwagandha. All 3 products work hand-in-hand to restore vigor and endurance. Highly recommended for all men.
           </p>
           <div class="review-footer-info">
-            <span class="review-product-tag">Purchased: Full Power Combo Kit</span>
+            <span class="review-product-tag">Purchased: Complete 3-in-1 Power Combo Kit</span>
             <span class="review-date">Reviewed 2 weeks ago</span>
           </div>
         </div>
@@ -409,8 +455,8 @@
       <!-- Quick Scroll to Top Order Button -->
       <div class="bottom-order-trigger">
         <button class="scroll-up-order-btn" onclick="scrollToTopForm()">
-          <span data-en="↑ ORDER COMBO KIT (CASH ON DELIVERY - ₹3,499)" data-hi="↑ अभी कॉम्बो आर्डर करें (कैश ऑन डिलीवरी - ₹3,499)">
-            ↑ ORDER COMBO KIT (CASH ON DELIVERY - ₹3,499)
+          <span data-en="↑ ORDER 3-IN-1 COMBO KIT (CASH ON DELIVERY - ₹3,499)" data-hi="↑ अभी 3-इन-1 कॉम्बो आर्डर करें (कैश ऑन डिलीवरी - ₹3,499)">
+            ↑ ORDER 3-IN-1 COMBO KIT (CASH ON DELIVERY - ₹3,499)
           </span>
         </button>
       </div>
@@ -433,8 +479,8 @@
         <span class="check-symbol">✓</span>
       </div>
       
-      <h3 class="modal-h3" data-en="Your Combo Order is Registered! 🎉" data-hi="आपका कॉम्बो आर्डर बुक हो गया है! 🎉">
-        Your Combo Order is Registered! 🎉
+      <h3 class="modal-h3" data-en="Your 3-in-1 Combo Order is Registered! 🎉" data-hi="आपका 3-इन-1 कॉम्बो आर्डर बुक हो गया है! 🎉">
+        Your 3-in-1 Combo Order is Registered! 🎉
       </h3>
       <p class="modal-desc" data-en="Thank you for choosing Wellness Herbal. Our senior doctor will contact you shortly to confirm discreet dispatch & explain daily usage." data-hi="वेलनेस हर्बल चुनने के लिए धन्यवाद। हमारे वरिष्ठ डॉक्टर जल्द ही आपसे संपर्क करके पार्सल कन्फर्म करेंगे और सेवन विधि समझाएंगे।">
         Thank you for choosing Wellness Herbal. Our senior doctor will contact you shortly to confirm discreet dispatch & explain daily usage.
@@ -447,7 +493,7 @@
         </div>
         <div class="rec-line">
           <span class="rec-label" data-en="Product:" data-hi="प्रोडक्ट:">Product:</span>
-          <strong class="rec-prod-name">Power Combo (Powder 200g + Oil Spray 50ml)</strong>
+          <strong class="rec-prod-name">Complete 3-in-1 Power Combo (Powder 200g + 30 Capsules + Spray 50ml)</strong>
         </div>
         <div class="rec-line">
           <span class="rec-label" data-en="Customer:" data-hi="ग्राहक का नाम:">Customer:</span>
@@ -468,7 +514,7 @@
       </div>
 
       <div class="team-contact-notice">
-        👨‍⚕️ <span data-en="Our specialist doctor will call you to guide dosage & separate usage." data-hi="हमारे डॉक्टर आपको दोनों का अलग-अलग सही उपयोग समझाने के लिए कॉल करेंगे।">Our specialist doctor will call you to guide dosage & separate usage.</span>
+        👨‍⚕️ <span data-en="Our specialist doctor will call you to guide dosage & 3-step separate usage." data-hi="हमारे डॉक्टर आपको तीनों उत्पादों का अलग-अलग सही उपयोग और खुराक समझाने के लिए कॉल करेंगे।">Our specialist doctor will call you to guide dosage & 3-step separate usage.</span>
       </div>
 
       <div class="modal-btn-stack">

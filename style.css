@@ -283,8 +283,8 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-dark); font-size: 
 }
 
 .combo-hero-thumb {
-  width: 104px;
-  height: 98px;
+  width: 116px;
+  height: 102px;
   background: radial-gradient(circle, #f8fafc 0%, #eef2f6 80%);
   border-radius: var(--radius-md);
   border: 1.5px solid rgba(217, 119, 6, 0.35);
@@ -300,9 +300,10 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-dark); font-size: 
 
 .thumb-img-combo {
   max-width: 100%;
-  max-height: 82px;
+  max-height: 86px;
   object-fit: contain;
   filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.15));
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 .active-tag-pill {
@@ -426,6 +427,73 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-dark); font-size: 
 }
 
 /* ==========================================================
+   QUICK 3-ITEM PREVIEW STRIP
+   ========================================================== */
+.combo-items-preview-strip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: #fdfaf2;
+  border-bottom: 1px dashed rgba(217, 119, 6, 0.35);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.preview-strip-label {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: var(--gold-deep);
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.item-chips-scroll {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+}
+
+.preview-item-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-full);
+  padding: 3px 8px 3px 4px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #334155;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.preview-item-chip .chip-img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #f8fafc;
+}
+
+.preview-item-chip:hover {
+  border-color: var(--gold-primary);
+  background: #fffbeb;
+}
+
+.preview-item-chip.active {
+  background: #fef3c7;
+  border-color: #d97706;
+  color: #92400e;
+  box-shadow: 0 1px 4px rgba(217, 119, 6, 0.2);
+}
+
+/* ==========================================================
    COMBO USAGE GUIDE (SEPARATE USAGE EXPLANATION)
    ========================================================== */
 .combo-usage-box {
@@ -454,28 +522,55 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-dark); font-size: 
 
 .usage-step-card {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 10px;
   background: #ffffff;
   border: 1px solid var(--border-light);
   border-radius: var(--radius-md);
-  padding: 9px 11px;
+  padding: 8px 10px;
   box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.usage-step-card:hover {
+  transform: translateY(-1px);
+  border-color: rgba(217, 119, 6, 0.4);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
 }
 
 .step-num-pill {
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
   background: linear-gradient(135deg, #b45309 0%, #d97706 100%);
   color: #ffffff;
-  font-size: 0.74rem;
+  font-size: 0.72rem;
   font-weight: 900;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  margin-top: 1px;
+}
+
+.step-thumb-wrap {
+  width: 38px;
+  height: 38px;
+  background: radial-gradient(circle, #ffffff 0%, #f1f5f9 100%);
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 2px;
+}
+
+.step-mini-thumb {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.12));
 }
 
 .step-content {
@@ -1308,8 +1403,8 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-dark); font-size: 
   }
 
   .combo-hero-thumb {
-    width: 90px;
-    height: 88px;
+    width: 104px;
+    height: 92px;
   }
 
   .price-val {
