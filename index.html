@@ -570,7 +570,27 @@
 
   </div>
 
-  <script src="script.js?v=5"></script>
+  <!-- Order Processing Overlay Loader -->
+  <div class="order-loader-overlay" id="orderLoaderOverlay" style="display: none;">
+    <div class="loader-card">
+      <div class="loader-spinner-ring"></div>
+      <h3 class="loader-title"
+        data-en="Booking Your Order..."
+        data-hi="आपका आर्डर दर्ज हो रहा है...">
+        Booking Your Order...
+      </h3>
+      <p class="loader-subtitle"
+        data-en="Saving delivery details to Google Sheet. Please wait 2-3 seconds..."
+        data-hi="डिलीवरी विवरण सुरक्षित दर्ज किया जा रहा है। कृपया 2-3 सेकंड प्रतीक्षा करें...">
+        Saving delivery details to Google Sheet. Please wait 2-3 seconds...
+      </p>
+      <div class="loader-bar-track">
+        <div class="loader-bar-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js?v=7"></script>
 </body>
 
 </html>
