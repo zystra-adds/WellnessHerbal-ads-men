@@ -249,31 +249,57 @@ function initFormValidation() {
 
     if (submitBtn) {
       submitBtn.classList.add('loading');
-      submitBtn.querySelector('.btn-main-title').textContent = '⏳ REGISTERING ORDER...';
+      submitBtn.querySelector('.btn-main-title').textContent = '⏳ CONFIRMING YOUR ORDER...';
     }
 
+    const randomId = 'WH-' + Math.floor(10000 + Math.random() * 90000);
     const orderData = {
+      orderId: `#${randomId}`,
       name: nameInput.value.trim(),
       phone: phoneInput.value.trim(),
       pincode: pincodeInput.value.trim(),
       address: addressInput.value.trim(),
       product: COMBO_DETAILS.name,
       amount: COMBO_DETAILS.amount,
-      dpdpConsent: "Agreed (Safe Data & Tracking Consent)"
+      dpdpConsent: "Agreed (Safe Data & Tracking Consent)",
+      timestamp: new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })
     };
 
-    openSuccessModal(orderData);
-    form.reset();
-    document.querySelectorAll('.input-cell').forEach(f => f.classList.remove('valid', 'has-error'));
-    if (dpdpBox) dpdpBox.classList.remove('checked', 'has-error');
-    checkAllFormValid();
+    // 1. Submit to Google Sheets in background
+    submitToGoogleSheet(orderData);
 
-    if (submitBtn) {
-      setTimeout(() => {
-        submitBtn.classList.remove('loading');
-        submitBtn.querySelector('.btn-main-title').textContent = 'BOOK CASH ON DELIVERY ORDER →';
-      }, 1200);
+    // 2. Track Meta Pixel Conversion (Purchase & Lead)
+    if (typeof window.fbq === 'function') {
+      try {
+        window.fbq('track', 'Purchase', {
+          value: 3499,
+          currency: 'INR',
+          content_name: orderData.product,
+          content_type: 'product',
+          order_id: orderData.orderId
+        });
+        window.fbq('track', 'Lead');
+      } catch (err) {
+        console.log('Pixel tracking error:', err);
+      }
     }
+
+    // 3. Store in sessionStorage for thankyou.html
+    try {
+      sessionStorage.setItem('wellnessHerbalOrder', JSON.stringify(orderData));
+    } catch (err) {}
+
+    // 4. Redirect to dedicated Thank You confirmation page
+    const query = new URLSearchParams({
+      id: randomId,
+      name: orderData.name,
+      phone: orderData.phone,
+      address: orderData.address + ', PIN: ' + orderData.pincode
+    });
+
+    setTimeout(() => {
+      window.location.href = 'thankyou.html?' + query.toString();
+    }, 500);
   });
 }
 
@@ -295,77 +321,3 @@ function submitToGoogleSheet(data) {
     console.log("Fetch error:", e);
   }
 }
-
-// ==========================================================
-// 4. ORDER CONFIRMATION MODAL & WHATSAPP
-// ==========================================================
-function openSuccessModal(data) {
-  const modal = document.getElementById('orderSuccessModal');
-  const idEl = document.getElementById('receiptOrderId');
-  const nameEl = document.getElementById('receiptName');
-  const phoneEl = document.getElementById('receiptPhone');
-  const addressEl = document.getElementById('receiptAddress');
-  const waBtn = document.getElementById('whatsappConfirmLink');
-
-  const randomId = 'WH-' + Math.floor(10000 + Math.random() * 90000);
-
-  if (idEl) idEl.textContent = `#${randomId}`;
-  if (nameEl) nameEl.textContent = data.name;
-  if (phoneEl) phoneEl.textContent = `+91 ${data.phone}`;
-  if (addressEl) addressEl.textContent = `${data.address}, PIN: ${data.pincode}`;
-
-  // Submit to Google Sheets in background
-  submitToGoogleSheet({
-    orderId: `#${randomId}`,
-    product: data.product,
-    name: data.name,
-    phone: data.phone,
-    pincode: data.pincode,
-    address: data.address,
-    amount: data.amount,
-    dpdpConsent: data.dpdpConsent || "Agreed",
-    timestamp: new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })
-  });
-
-  // Track Meta Pixel Conversion (Purchase & Lead)
-  if (typeof window.fbq === 'function') {
-    try {
-      window.fbq('track', 'Purchase', {
-        value: 3499,
-        currency: 'INR',
-        content_name: data.product,
-        content_type: 'product',
-        order_id: `#${randomId}`
-      });
-      window.fbq('track', 'Lead');
-    } catch (err) {
-      console.log('Pixel tracking error:', err);
-    }
-  }
-
-  const waText = encodeURIComponent(
-    `Hello Wellness Herbal, I placed my order for the Complete 3-in-1 Power Combo (Powder + Capsules + Spray)!\n\n` +
-    `*Order ID:* #${randomId}\n` +
-    `*Item:* ${data.product}\n` +
-    `*Amount:* ${data.amount}\n` +
-    `*Name:* ${data.name}\n` +
-    `*Phone:* +91 ${data.phone}\n` +
-    `*Address:* ${data.address}, PIN: ${data.pincode}\n\n` +
-    `Please confirm dispatch in discreet secret packaging. Thank you!`
-  );
-
-  if (waBtn) {
-    waBtn.href = `https://api.whatsapp.com/send?text=${waText}`;
-  }
-
-  if (modal) {
-    modal.classList.add('active');
-  }
-}
-
-window.closeSuccessModal = function() {
-  const modal = document.getElementById('orderSuccessModal');
-  if (modal) {
-    modal.classList.remove('active');
-  }
-};

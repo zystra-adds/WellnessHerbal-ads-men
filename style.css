@@ -1577,3 +1577,347 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-dark); font-size: 
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* ==========================================================
+   DEDICATED THANK YOU CONFIRMATION PAGE
+   ========================================================== */
+.thankyou-card {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-card);
+  padding: 24px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.thankyou-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+
+.celebrate-badge {
+  background: #ecfdf5;
+  color: #047857;
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  border: 1px solid #a7f3d0;
+  letter-spacing: 0.6px;
+}
+
+.ty-check-circle {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 8px 24px rgba(5, 150, 105, 0.35);
+  margin: 6px 0;
+}
+
+.ty-check-pulse {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid #059669;
+  animation: tyPulseRing 2s infinite ease-out;
+}
+
+@keyframes tyPulseRing {
+  0% { transform: scale(1); opacity: 0.9; }
+  100% { transform: scale(1.45); opacity: 0; }
+}
+
+.ty-check-icon {
+  color: #ffffff;
+  font-size: 2.2rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.ty-title {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: var(--text-pure);
+  line-height: 1.25;
+}
+
+.ty-subtitle {
+  font-size: 0.82rem;
+  color: #475569;
+  line-height: 1.45;
+  max-width: 440px;
+}
+
+.ty-order-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #f8fafc;
+  border: 1.5px dashed #cbd5e1;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+}
+
+.ty-order-pill .pill-label {
+  color: #64748b;
+  font-weight: 600;
+}
+
+.ty-order-pill .pill-id {
+  color: var(--gold-deep);
+  font-weight: 900;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+}
+
+/* Roadmap timeline */
+.ty-roadmap-box {
+  background: #fdfaf2;
+  border: 1px solid rgba(217, 119, 6, 0.25);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+}
+
+.roadmap-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  font-weight: 900;
+  color: var(--gold-deep);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.road-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.road-step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.road-num {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #b45309 0%, #d97706 100%);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.road-text strong {
+  display: block;
+  font-size: 0.84rem;
+  font-weight: 800;
+  color: var(--text-pure);
+  margin-bottom: 2px;
+}
+
+.road-text p {
+  font-size: 0.74rem;
+  color: #475569;
+  line-height: 1.35;
+  margin: 0;
+}
+
+/* Receipt Details */
+.ty-receipt-card {
+  background: #f8fafc;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+}
+
+.receipt-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  font-weight: 900;
+  color: var(--text-pure);
+  margin-bottom: 12px;
+}
+
+.ty-product-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ty-product-thumb {
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-sm);
+  padding: 4px;
+  flex-shrink: 0;
+}
+
+.ty-prod-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ty-prod-badge {
+  font-size: 0.6rem;
+  font-weight: 800;
+  color: #b45309;
+}
+
+.ty-prod-name {
+  font-size: 0.82rem;
+  color: var(--text-pure);
+  line-height: 1.25;
+}
+
+.ty-prod-price {
+  font-size: 0.82rem;
+  font-weight: 900;
+  color: var(--gold-deep);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 2px;
+}
+
+.ty-cod-tag {
+  background: #ecfdf5;
+  color: #065f46;
+  font-size: 0.6rem;
+  padding: 1px 6px;
+  border-radius: var(--radius-full);
+  border: 1px solid #a7f3d0;
+}
+
+.receipt-divider {
+  height: 1px;
+  background: #e2e8f0;
+  margin: 12px 0;
+}
+
+.ty-details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.ty-detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.78rem;
+}
+
+.ty-dt-label {
+  color: #64748b;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.ty-dt-val {
+  color: var(--text-pure);
+  text-align: right;
+  word-break: break-word;
+}
+
+.ty-total-row {
+  margin-top: 4px;
+  padding-top: 8px;
+  border-top: 1px dashed #cbd5e1;
+}
+
+.ty-total-amount {
+  font-size: 1.15rem;
+  color: var(--gold-deep);
+  font-weight: 900;
+}
+
+/* WhatsApp Button */
+.ty-action-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ty-whatsapp-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: #ffffff !important;
+  text-decoration: none;
+  padding: 14px 18px;
+  border-radius: var(--radius-md);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
+  transition: all 0.25s ease;
+}
+
+.ty-whatsapp-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
+}
+
+.wa-icon {
+  font-size: 1.6rem;
+}
+
+.wa-text-wrap {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.wa-main {
+  font-size: 0.96rem;
+  font-weight: 900;
+}
+
+.wa-sub {
+  font-size: 0.7rem;
+  opacity: 0.92;
+}
+
+.ty-security-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  color: #065f46;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+  text-align: center;
+  font-weight: 600;
+}
