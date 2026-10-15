@@ -96,8 +96,78 @@ function initFormValidation() {
   const phoneInput = document.getElementById('phoneNumber');
   const pincodeInput = document.getElementById('pincode');
   const addressInput = document.getElementById('fullAddress');
+  const dpdpCheckbox = document.getElementById('dpdpConsent');
+  const dpdpBox = document.getElementById('dpdpOptinBox');
+  const submitBtn = document.getElementById('submitBtn');
 
   if (!form) return;
+
+  function checkAllFormValid() {
+    const isNameValid = nameInput.value.trim().length >= 3;
+    const isPhoneValid = /^[6-9]\d{9}$/.test(phoneInput.value.trim());
+    const isPincodeValid = pincodeInput.value.trim().length === 6;
+    const isAddressValid = addressInput.value.trim().length >= 4;
+    const isConsentChecked = dpdpCheckbox ? dpdpCheckbox.checked : false;
+
+    const allValid = isNameValid && isPhoneValid && isPincodeValid && isAddressValid && isConsentChecked;
+
+    if (submitBtn) {
+      if (allValid) {
+        submitBtn.classList.remove('btn-disabled');
+      } else {
+        submitBtn.classList.add('btn-disabled');
+      }
+    }
+    return allValid;
+  }
+
+  function showMissingErrors() {
+    let firstErrorEl = null;
+
+    if (nameInput.value.trim().length < 3) {
+      const parent = nameInput.closest('.input-cell');
+      parent.classList.add('has-error');
+      parent.classList.remove('valid');
+      if (!firstErrorEl) firstErrorEl = nameInput;
+    }
+
+    if (!/^[6-9]\d{9}$/.test(phoneInput.value.trim())) {
+      const parent = phoneInput.closest('.input-cell');
+      parent.classList.add('has-error');
+      parent.classList.remove('valid');
+      if (!firstErrorEl) firstErrorEl = phoneInput;
+    }
+
+    if (pincodeInput.value.trim().length !== 6) {
+      const parent = pincodeInput.closest('.input-cell');
+      parent.classList.add('has-error');
+      parent.classList.remove('valid');
+      if (!firstErrorEl) firstErrorEl = pincodeInput;
+    }
+
+    if (addressInput.value.trim().length < 4) {
+      const parent = addressInput.closest('.input-cell');
+      parent.classList.add('has-error');
+      parent.classList.remove('valid');
+      if (!firstErrorEl) firstErrorEl = addressInput;
+    }
+
+    if (dpdpCheckbox && !dpdpCheckbox.checked) {
+      if (dpdpBox) dpdpBox.classList.add('has-error');
+      if (!firstErrorEl) firstErrorEl = dpdpCheckbox;
+    }
+
+    if (submitBtn) {
+      submitBtn.classList.add('shake');
+      setTimeout(() => submitBtn.classList.remove('shake'), 450);
+    }
+
+    if (firstErrorEl) {
+      const scrollTarget = firstErrorEl.closest('.input-cell') || dpdpBox || firstErrorEl;
+      scrollTarget.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      setTimeout(() => firstErrorEl.focus(), 350);
+    }
+  }
 
   // Name Validation
   nameInput.addEventListener('input', () => {
@@ -108,6 +178,7 @@ function initFormValidation() {
     } else {
       parent.classList.remove('valid');
     }
+    checkAllFormValid();
   });
 
   // Phone Validation (10 digits starting 6-9)
@@ -122,6 +193,7 @@ function initFormValidation() {
     } else {
       parent.classList.remove('valid');
     }
+    checkAllFormValid();
   });
 
   // Pincode Validation (6 digits)
@@ -136,73 +208,71 @@ function initFormValidation() {
     } else {
       parent.classList.remove('valid');
     }
+    checkAllFormValid();
   });
 
   // Address Validation
   addressInput.addEventListener('input', () => {
     const parent = addressInput.closest('.input-cell');
-    if (addressInput.value.trim().length >= 5) {
+    if (addressInput.value.trim().length >= 4) {
       parent.classList.add('valid');
       parent.classList.remove('has-error');
     } else {
       parent.classList.remove('valid');
     }
+    checkAllFormValid();
   });
 
-  // Form Submit
+  if (dpdpCheckbox && dpdpBox) {
+    dpdpCheckbox.addEventListener('change', () => {
+      if (dpdpCheckbox.checked) {
+        dpdpBox.classList.add('checked');
+        dpdpBox.classList.remove('has-error');
+      } else {
+        dpdpBox.classList.remove('checked');
+      }
+      checkAllFormValid();
+    });
+  }
+
+  // Initial check on page load
+  checkAllFormValid();
+
+  // Form Submit / Tap on button
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    let isValid = true;
 
-    if (nameInput.value.trim().length < 2) {
-      nameInput.closest('.input-cell').classList.add('has-error');
-      isValid = false;
-    }
-    if (!/^[6-9]\d{9}$/.test(phoneInput.value)) {
-      phoneInput.closest('.input-cell').classList.add('has-error');
-      isValid = false;
-    }
-    if (pincodeInput.value.length !== 6) {
-      pincodeInput.closest('.input-cell').classList.add('has-error');
-      isValid = false;
-    }
-    if (addressInput.value.trim().length < 4) {
-      addressInput.closest('.input-cell').classList.add('has-error');
-      isValid = false;
+    if (!checkAllFormValid()) {
+      showMissingErrors();
+      return;
     }
 
-    if (isValid) {
-      const submitBtn = document.getElementById('submitBtn');
-      if (submitBtn) {
-        submitBtn.classList.add('loading');
-        submitBtn.querySelector('.btn-main-title').textContent = '⏳ REGISTERING ORDER...';
-      }
+    if (submitBtn) {
+      submitBtn.classList.add('loading');
+      submitBtn.querySelector('.btn-main-title').textContent = '⏳ REGISTERING ORDER...';
+    }
 
-      const orderData = {
-        name: nameInput.value.trim(),
-        phone: phoneInput.value.trim(),
-        pincode: pincodeInput.value.trim(),
-        address: addressInput.value.trim(),
-        product: COMBO_DETAILS.name,
-        amount: COMBO_DETAILS.amount
-      };
+    const orderData = {
+      name: nameInput.value.trim(),
+      phone: phoneInput.value.trim(),
+      pincode: pincodeInput.value.trim(),
+      address: addressInput.value.trim(),
+      product: COMBO_DETAILS.name,
+      amount: COMBO_DETAILS.amount,
+      dpdpConsent: "Agreed (Safe Data & Tracking Consent)"
+    };
 
-      openSuccessModal(orderData);
-      form.reset();
-      document.querySelectorAll('.input-cell').forEach(f => f.classList.remove('valid'));
+    openSuccessModal(orderData);
+    form.reset();
+    document.querySelectorAll('.input-cell').forEach(f => f.classList.remove('valid', 'has-error'));
+    if (dpdpBox) dpdpBox.classList.remove('checked', 'has-error');
+    checkAllFormValid();
 
-      if (submitBtn) {
-        setTimeout(() => {
-          submitBtn.classList.remove('loading');
-          submitBtn.querySelector('.btn-main-title').textContent = 'BOOK CASH ON DELIVERY ORDER →';
-        }, 1200);
-      }
-    } else {
-      const firstErr = form.querySelector('.input-cell.has-error');
-      if (firstErr) {
-        const input = firstErr.querySelector('input');
-        if (input) input.focus();
-      }
+    if (submitBtn) {
+      setTimeout(() => {
+        submitBtn.classList.remove('loading');
+        submitBtn.querySelector('.btn-main-title').textContent = 'BOOK CASH ON DELIVERY ORDER →';
+      }, 1200);
     }
   });
 }
@@ -253,8 +323,25 @@ function openSuccessModal(data) {
     pincode: data.pincode,
     address: data.address,
     amount: data.amount,
+    dpdpConsent: data.dpdpConsent || "Agreed",
     timestamp: new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })
   });
+
+  // Track Meta Pixel Conversion (Purchase & Lead)
+  if (typeof window.fbq === 'function') {
+    try {
+      window.fbq('track', 'Purchase', {
+        value: 3499,
+        currency: 'INR',
+        content_name: data.product,
+        content_type: 'product',
+        order_id: `#${randomId}`
+      });
+      window.fbq('track', 'Lead');
+    } catch (err) {
+      console.log('Pixel tracking error:', err);
+    }
+  }
 
   const waText = encodeURIComponent(
     `Hello Wellness Herbal, I placed my order for the Complete 3-in-1 Power Combo (Powder + Capsules + Spray)!\n\n` +

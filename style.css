@@ -790,6 +790,122 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-dark); font-size: 
 }
 
 /* ==========================================================
+   SIMPLE PRIVACY & ORDER TRACKING OPT-IN BOX
+   ========================================================== */
+.dpdp-optin-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.dpdp-optin-box:hover {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+.dpdp-optin-box.checked {
+  background: #f0fdf4;
+  border-color: #86efac;
+}
+
+.dpdp-optin-box.has-error {
+  background: #fff5f5;
+  border-color: #dc2626;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.12);
+  animation: dpdpShake 0.4s ease;
+}
+
+@keyframes dpdpShake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-4px); }
+  40%, 80% { transform: translateX(4px); }
+}
+
+.dpdp-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.dpdp-checkbox {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.dpdp-custom-check {
+  width: 17px;
+  height: 17px;
+  min-width: 17px;
+  background: #ffffff;
+  border: 1.5px solid #94a3b8;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.dpdp-label:hover .dpdp-custom-check {
+  border-color: var(--gold-primary);
+}
+
+.dpdp-checkbox:focus-visible + .dpdp-custom-check {
+  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.25);
+  border-color: var(--gold-primary);
+}
+
+.dpdp-checkbox:checked + .dpdp-custom-check {
+  background: #059669;
+  border-color: #059669;
+}
+
+.dpdp-checkbox:checked + .dpdp-custom-check::after {
+  content: '';
+  width: 4px;
+  height: 8px;
+  border: solid #ffffff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 1.5px;
+}
+
+.dpdp-text-content {
+  display: flex;
+  flex: 1;
+}
+
+.dpdp-terms {
+  font-size: 0.72rem;
+  line-height: 1.35;
+  color: #334155;
+  font-weight: 600;
+}
+
+.dpdp-tick-alert {
+  display: none;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #dc2626;
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px dashed rgba(220, 38, 38, 0.4);
+}
+
+.dpdp-optin-box.has-error .dpdp-tick-alert {
+  display: block;
+}
+
+/* ==========================================================
    PULSING HIGH CONVERSION ORDER BUTTON
    ========================================================== */
 .compact-order-btn {
@@ -803,17 +919,57 @@ body.lang-dual .label-hi { display: inline; color: var(--gold-dark); font-size: 
   padding: 13px 14px;
   cursor: pointer;
   box-shadow: 0 6px 20px rgba(5, 150, 105, 0.35);
-  transition: var(--transition);
+  transition: all 0.3s ease;
   margin-top: 2px;
 }
 
-.compact-order-btn:hover {
+.compact-order-btn:hover:not(.btn-disabled) {
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(5, 150, 105, 0.45);
 }
 
-.compact-order-btn:active {
+.compact-order-btn:active:not(.btn-disabled) {
   transform: translateY(1px);
+}
+
+/* Inactive/Disabled state: PURE BLACK button until all fields and tick are complete */
+.compact-order-btn.btn-disabled {
+  background: #111111 !important;
+  background-image: none !important;
+  color: #888888 !important;
+  border: 1px solid #222222 !important;
+  cursor: pointer !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) !important;
+  transform: none !important;
+  opacity: 0.95 !important;
+  pointer-events: auto !important;
+}
+
+.compact-order-btn.btn-disabled .btn-shine-bar {
+  display: none !important;
+}
+
+.compact-order-btn.btn-disabled .btn-main-title {
+  color: #d1d5db !important;
+  text-shadow: none !important;
+}
+
+.compact-order-btn.btn-disabled .btn-sub-detail {
+  color: #71717a !important;
+}
+
+.compact-order-btn.btn-disabled .btn-sub-detail strong {
+  color: #e4e4e7 !important;
+}
+
+.compact-order-btn.shake {
+  animation: btnShake 0.4s ease;
+}
+
+@keyframes btnShake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-5px); }
+  40%, 80% { transform: translateX(5px); }
 }
 
 .btn-shine-bar {

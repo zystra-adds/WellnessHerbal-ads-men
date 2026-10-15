@@ -11,7 +11,25 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&family=Noto+Sans+Devanagari:wght@400;600;700;800&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=4">
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1477503374244351');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1477503374244351&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
 </head>
 
 <body class="lang-dual">
@@ -109,7 +127,9 @@
                 autocomplete="name">
               <span class="valid-mark">✓</span>
             </div>
-            <small class="error-msg" data-en="Enter full name" data-hi="पूरा नाम दर्ज करें"></small>
+            <small class="error-msg">
+              <span data-en="⚠️ Please enter your full name" data-hi="⚠️ कृपया अपना पूरा नाम दर्ज करें">⚠️ Please enter your full name</span>
+            </small>
           </div>
 
           <!-- Mobile Number Field -->
@@ -125,7 +145,9 @@
                 required autocomplete="tel">
               <span class="valid-mark">✓</span>
             </div>
-            <small class="error-msg" data-en="Enter valid 10-digit number" data-hi="10 अंकों का नंबर डालें"></small>
+            <small class="error-msg">
+              <span data-en="⚠️ Enter valid 10-digit mobile number" data-hi="⚠️ 10 अंकों का सही मोबाइल नंबर डालें">⚠️ Enter valid 10-digit mobile number</span>
+            </small>
           </div>
 
         </div>
@@ -145,7 +167,9 @@
                 autocomplete="postal-code">
               <span class="valid-mark">✓</span>
             </div>
-            <small class="error-msg" data-en="Enter 6-digit pincode" data-hi="6 अंकों का पिन कोड डालें"></small>
+            <small class="error-msg">
+              <span data-en="⚠️ Enter 6-digit delivery pincode" data-hi="⚠️ 6 अंकों का सही पिन कोड डालें">⚠️ Enter 6-digit delivery pincode</span>
+            </small>
           </div>
 
           <!-- Complete Address Field -->
@@ -161,7 +185,9 @@
                 required autocomplete="street-address">
               <span class="valid-mark">✓</span>
             </div>
-            <small class="error-msg" data-en="Enter delivery address" data-hi="पूरा पता लिखें"></small>
+            <small class="error-msg">
+              <span data-en="⚠️ Enter house no, street & area address" data-hi="⚠️ मकान नं, गली व इलाके का पूरा पता लिखें">⚠️ Enter house no, street & area address</span>
+            </small>
           </div>
 
         </div>
@@ -179,8 +205,26 @@
             Packaging</span>
         </div>
 
+        <!-- Simple Privacy & Order Tracking Opt-in -->
+        <div class="dpdp-optin-box" id="dpdpOptinBox">
+          <label class="dpdp-label" for="dpdpConsent">
+            <input type="checkbox" id="dpdpConsent" name="dpdpConsent" class="dpdp-checkbox">
+            <span class="dpdp-custom-check" aria-hidden="true"></span>
+            <span class="dpdp-text-content">
+              <span class="dpdp-terms"
+                data-en="🔒 Your data is 100% safe and used only for order delivery & tracking."
+                data-hi="🔒 आपका डेटा 100% सुरक्षित है और केवल आर्डर डिलीवरी व ट्रैकिंग के लिए उपयोग होगा।">
+                🔒 Your data is 100% safe and used only for order delivery & tracking.
+              </span>
+            </span>
+          </label>
+          <div class="dpdp-tick-alert" id="dpdpTickAlert">
+            <span data-en="⚠️ Please tick this box to confirm order delivery" data-hi="⚠️ आर्डर पूरा करने के लिए कृपया इस बॉक्स पर टिक करें">⚠️ Please tick this box to confirm order delivery</span>
+          </div>
+        </div>
+
         <!-- Submit Button with Pulsing Glow -->
-        <button type="submit" class="compact-order-btn" id="submitBtn">
+        <button type="submit" class="compact-order-btn btn-disabled" id="submitBtn">
           <div class="btn-shine-bar"></div>
           <div class="btn-inner-content">
             <span class="btn-main-title" data-en="BOOK CASH ON DELIVERY ORDER →"
@@ -583,7 +627,7 @@
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=4"></script>
 </body>
 
 </html>
