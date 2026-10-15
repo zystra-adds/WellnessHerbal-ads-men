@@ -25,12 +25,6 @@
     'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '1477503374244351');
     fbq('track', 'PageView');
-    fbq('track', 'Purchase', {
-      value: 3499,
-      currency: 'INR',
-      content_name: "Complete Power Combo (Testosterone Powder + Steel Man Capsules + Spray)",
-      content_type: 'product'
-    });
   </script>
   <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=1477503374244351&ev=PageView&noscript=1"
@@ -171,24 +165,13 @@
         </div>
       </div>
 
-      <!-- WhatsApp Quick Confirmation Button -->
-      <div class="ty-action-stack">
-        <a id="tyWhatsappBtn" href="https://api.whatsapp.com/send?text=Hello" target="_blank" rel="noopener noreferrer" class="ty-whatsapp-btn">
-          <span class="wa-icon">💬</span>
-          <div class="wa-text-wrap">
-            <strong class="wa-main" data-en="Confirm on WhatsApp →" data-hi="व्हाट्सएप पर आर्डर कन्फर्म करें →">Confirm on WhatsApp →</strong>
-            <small class="wa-sub" data-en="Get priority dispatch & instant tracking updates" data-hi="फास्ट डिस्पैच और तुरंत ट्रैकिंग अपडेट पाएं">Get priority dispatch & instant tracking updates</small>
-          </div>
-        </a>
-
-        <!-- Privacy & Security Assurance Note -->
-        <div class="ty-security-banner">
-          <span>🔒</span>
-          <span data-en="100% Confidentiality & Data Privacy Guaranteed under DPDP Act 2023."
-            data-hi="DPDP एक्ट 2023 के तहत आपकी गोपनीयता व डेटा 100% सुरक्षित है।">
-            100% Confidentiality & Data Privacy Guaranteed under DPDP Act 2023.
-          </span>
-        </div>
+      <!-- Privacy & Security Assurance Note -->
+      <div class="ty-security-banner">
+        <span>🔒</span>
+        <span data-en="100% Confidentiality & Discreet Delivery Guaranteed under DPDP Act 2023."
+          data-hi="DPDP एक्ट 2023 के तहत आपकी गोपनीयता व गुप्त डिलीवरी 100% सुरक्षित है।">
+          100% Confidentiality & Discreet Delivery Guaranteed under DPDP Act 2023.
+        </span>
       </div>
 
     </main>
@@ -205,7 +188,7 @@
       });
     }
 
-    // Populate order details from sessionStorage or URL query params
+    // Populate order details & secure genuine order verification
     document.addEventListener('DOMContentLoaded', () => {
       let order = null;
       try {
@@ -214,7 +197,16 @@
       } catch (e) {}
 
       const urlParams = new URLSearchParams(window.location.search);
-      const orderId = (order && order.orderId) ? order.orderId : (urlParams.get('id') ? '#' + urlParams.get('id') : '#WH-' + Math.floor(10000 + Math.random() * 90000));
+      const hasUrlOrder = urlParams.has('id') && (order || urlParams.has('name'));
+
+      // 1. Direct Access Security Guard:
+      // If someone types thankyou.html directly without placing an order, redirect to index.html!
+      if (!order && !hasUrlOrder) {
+        window.location.replace('index.html');
+        return;
+      }
+
+      const orderId = (order && order.orderId) ? order.orderId : ('#' + urlParams.get('id'));
       const name = (order && order.name) ? order.name : (urlParams.get('name') || 'Valued Customer');
       const phone = (order && order.phone) ? order.phone : (urlParams.get('phone') || '');
       const address = (order && order.address) ? (order.address + (order.pincode ? ', PIN: ' + order.pincode : '')) : (urlParams.get('address') || 'Provided delivery address');
@@ -223,25 +215,26 @@
       const nameEl = document.getElementById('tyName');
       const phoneEl = document.getElementById('tyPhone');
       const addressEl = document.getElementById('tyAddress');
-      const waBtn = document.getElementById('tyWhatsappBtn');
 
       if (idEl) idEl.textContent = orderId;
       if (nameEl) nameEl.textContent = name;
       if (phoneEl) phoneEl.textContent = phone ? (phone.startsWith('+91') ? phone : '+91 ' + phone) : '-';
       if (addressEl) addressEl.textContent = address;
 
-      const waMessage = encodeURIComponent(
-        `Hello Wellness Herbal, I have placed my order for Complete 3-in-1 Men's Power Combo!\n\n` +
-        `*Order ID:* ${orderId}\n` +
-        `*Name:* ${name}\n` +
-        `*Phone:* ${phone}\n` +
-        `*Address:* ${address}\n` +
-        `*Amount:* ₹3,499 (Cash On Delivery)\n\n` +
-        `Please confirm my dispatch in 100% secret packaging. Thank you!`
-      );
-
-      if (waBtn) {
-        waBtn.href = `https://api.whatsapp.com/send?text=${waMessage}`;
+      // 2. Lead Deduplication Guard:
+      // Fires Lead event ONLY ONCE per order. Refreshing the page will NEVER fire duplicate leads!
+      const leadTrackKey = 'lead_tracked_' + orderId;
+      if (!sessionStorage.getItem(leadTrackKey) && typeof window.fbq === 'function') {
+        try {
+          window.fbq('track', 'Lead', {
+            content_name: (order && order.product) || "Complete Power Combo",
+            value: 3499,
+            currency: 'INR'
+          });
+          sessionStorage.setItem(leadTrackKey, 'true');
+        } catch (err) {
+          console.log('Lead tracking notice:', err);
+        }
       }
     });
   </script>

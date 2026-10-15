@@ -247,9 +247,14 @@ function initFormValidation() {
       return;
     }
 
+    const loaderOverlay = document.getElementById('orderLoaderOverlay');
+    if (loaderOverlay) {
+      loaderOverlay.style.display = 'flex';
+    }
+
     if (submitBtn) {
       submitBtn.classList.add('loading');
-      submitBtn.querySelector('.btn-main-title').textContent = '⏳ CONFIRMING YOUR ORDER...';
+      submitBtn.querySelector('.btn-main-title').textContent = '⏳ BOOKING ORDER IN SYSTEM...';
     }
 
     const randomId = 'WH-' + Math.floor(10000 + Math.random() * 90000);
@@ -265,26 +270,14 @@ function initFormValidation() {
       timestamp: new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })
     };
 
-    // 1. Submit to Google Sheets in background
-    submitToGoogleSheet(orderData);
-
-    // 2. Track Meta Pixel Conversion (Purchase & Lead)
-    if (typeof window.fbq === 'function') {
-      try {
-        window.fbq('track', 'Purchase', {
-          value: 3499,
-          currency: 'INR',
-          content_name: orderData.product,
-          content_type: 'product',
-          order_id: orderData.orderId
-        });
-        window.fbq('track', 'Lead');
-      } catch (err) {
-        console.log('Pixel tracking error:', err);
-      }
+    // 1. Wait for Google Sheets entry to complete FIRST!
+    try {
+      await submitToGoogleSheet(orderData);
+    } catch (sheetErr) {
+      console.log('Sheet entry notice:', sheetErr);
     }
 
-    // 3. Store in sessionStorage for thankyou.html
+    // 2. Store verified order data in sessionStorage for thankyou.html
     try {
       sessionStorage.setItem('wellnessHerbalOrder', JSON.stringify(orderData));
     } catch (err) {}
@@ -299,25 +292,32 @@ function initFormValidation() {
 
     setTimeout(() => {
       window.location.href = 'thankyou.html?' + query.toString();
-    }, 500);
+    }, 300);
   });
 }
 
-// Submit silently to Google Sheet Webhook
-function submitToGoogleSheet(data) {
-  if (!GOOGLE_SHEET_APP_URL) return;
+// Submit to Google Sheet Webhook and wait for network completion
+async function submitToGoogleSheet(data) {
+  if (!GOOGLE_SHEET_APP_URL) return true;
   const payloadStr = JSON.stringify(data);
 
   try {
-    fetch(GOOGLE_SHEET_APP_URL, {
+    const fetchPromise = fetch(GOOGLE_SHEET_APP_URL, {
       method: "POST",
       mode: "no-cors",
       headers: {
         "Content-Type": "text/plain;charset=utf-8"
       },
       body: payloadStr
-    }).catch(err => console.log("Fetch catch:", err));
+    });
+
+    // 4-second safety timeout so customer is never stuck if Google server lags
+    const timeoutPromise = new Promise(resolve => setTimeout(resolve, 4000));
+
+    await Promise.race([fetchPromise, timeoutPromise]);
+    return true;
   } catch (e) {
     console.log("Fetch error:", e);
+    return false;
   }
 }
